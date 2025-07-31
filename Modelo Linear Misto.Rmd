@@ -1,0 +1,660 @@
+---
+title: "Modelo Linear Misto - Análise dados FCWC"
+author: "Rafael"
+date: "2025-07-21"
+output: word_document
+editor_options: 
+  chunk_output_type: console
+---
+
+#Modelo linear de efeitos mistos para análise dos fatores preditores das demandas físicas na copa do mundo de clubes
+
+##Carregando os pacotes necessários e funções para formatar tabelas e gráficos.
+```{r}
+#| echo: FALSE
+#| include: FALSE
+
+# Para estabelecer o padrão do documento
+knitr::opts_chunk$set(echo = FALSE)
+
+# Instale o pacote pacman se ainda não estiver instalado
+# install.packages("pacman")
+pacman::p_load(haven, tidyverse, psych, easystats, apaTables, knitr, flextable, BlandAltmanLeh, openxlsx, rstatix, MKinfer, gtsummary, officer, ggplot2, blandr, afex, emmeans, effectsize, car, multcomp,dplyr,qqplotr,geepack,multcomp, lme4, lmerTest, performance, nortest, broom.mixed, scales)
+
+
+# Para formatar tabelas
+options(digits = 3)
+set_flextable_defaults(decimal.mark = ",", big.mark = " ")
+
+# Para gráficos
+theme_set(theme_minimal())
+```
+
+##Carregando e tratando os dados
+```{r}
+#| echo: FALSE
+#| include: FALSE
+# Carregando os dados
+df <- read.xlsx("/Users/rafaeltorres/Google Drive/Ciências do Esporte/Mestrado - Ciências do Esporte UFMG/Análise Copa do Mundo de Clubes 2025/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
+  as_factor()
+
+df$Fase <- as_factor(df$Fase)
+df$Período <- as_factor(df$Período)
+df$Período <- relevel(df$Período, ref = "Tarde")
+df$Clima_origem <- as_factor(df$Clima_origem)
+df$Id.jogador <- as_factor(df$Id.jogador)
+df$Player_position <- as_factor(df$Player_position)
+df$Player_position <- relevel(df$Player_position, ref = "DF")
+df$Tempo.total.jogado <- as.numeric(df$Tempo.total.jogado)
+df <- filter(df, Tipo_estadio != "Fechado") #retira os dados dos jogos realizados no Mercedes-Benz Stadium
+df <- filter(df, Tempo.total.jogado >= 60) #retira os dados de jogadores que jogaram pouco tempo
+df$WBGT <- as.numeric(df$WBGT)
+df$Diferença_Classificação <- as.numeric(df$Diferença_Classificação)
+df$Zone4e5_min <- as.numeric(df$Zone4e5_min)
+
+
+head(df)
+
+```
+
+##Descriptives
+```{r}
+#| echo: FALSE
+#| include: TRUE
+target_variable <- "Total_distance_min"
+grouping_variables <- c("Período", "Fase", "Player_position", "Clima_origem")
+all_summary_tables <- list()
+
+desc_general <- df %>%
+  get_summary_stats(!!sym(target_variable), type = "common")
+
+all_summary_tables[["General"]] <- flextable(desc_general) %>%
+  autofit() %>%
+  set_caption(paste("Estatísticas descritivas -", target_variable, "(Geral)"))
+
+for (grp_var in grouping_variables) {
+  desc_grouped <- df %>%
+    group_by(!!sym(grp_var)) %>% 
+    get_summary_stats(!!sym(target_variable), type = "common") %>%
+    ungroup()
+
+  table_caption <- paste("Estatísticas descritivas -", target_variable, "(Por", grp_var, ")")
+  all_summary_tables[[grp_var]] <- flextable(desc_grouped) %>%
+    autofit() %>%
+    set_caption(table_caption)
+}
+
+print(all_summary_tables$General)
+print(all_summary_tables$Fase)
+print(all_summary_tables$Player_position)
+print(all_summary_tables$Clima_origem)
+print(all_summary_tables$Período)
+
+```
+
+##Centralizando as variáveis numéricas em torno da média (para melhorar interpretabilidade)
+```{r}
+#| echo: FALSE
+#| include: FALSE
+df$WBGT_c <- scale(df$WBGT, center = TRUE, scale = FALSE)
+df$Diferença_Classificação_c <- scale(df$Diferença_Classificação, center = TRUE, scale = FALSE)
+df$Classificação_equipe_c <- scale(df$Classificação_equipe, center = TRUE, scale = FALSE)
+df$Classificação_adversário_c <- scale(df$Classificação_adversário, center = TRUE, scale = FALSE)
+df$Temp_c <- scale(df$Temp, center = TRUE, scale = FALSE)
+df$TN_c <- scale(df$TN, center = TRUE, scale = FALSE)
+df$TG_c <- scale(df$TG, center = TRUE, scale = FALSE)
+df$UR_c <- scale(df$UR, center = TRUE, scale = FALSE)
+df$UA_c <- scale(df$UA, center = TRUE, scale = FALSE)
+df$RAD_c <- scale(df$RAD, center = TRUE, scale = FALSE)
+df$Player_age_c <- scale(df$Player_age, center = TRUE, scale = FALSE)
+
+```
+
+##Modelo linear de efeitos mistos
+```{r}
+#| echo: FALSE
+#| include: TRUE
+VD <- df$Top_Speed #Definindo a VD que será analisada
+
+#MODELO 1
+mixed_model1 <- lmer(
+  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + WBGT_c + (1 | Id.jogador) + Período * WBGT_c,
+  data = df, REML = FALSE
+)
+summary(mixed_model1)
+
+r2_mixed_model1 <- r2(mixed_model1)
+print(r2_mixed_model1)
+VarCorr(mixed_model1)
+performance::check_collinearity(mixed_model1)
+
+#MODELO 2
+mixed_model2 <- lmer(
+  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + UR_c + RAD_c + (1 | Id.jogador),
+  data = df, REML = FALSE
+)
+summary(mixed_model2)
+
+r2_mixed_model2 <- r2(mixed_model2)
+print(r2_mixed_model2)
+VarCorr(mixed_model2)
+performance::check_collinearity(mixed_model2)
+
+#MODELO 3
+mixed_model3 <- lmer(
+  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + UA_c + RAD_c + (1 | Id.jogador) + Período * Temp_c + Período * UA_c + Período * RAD_c,
+  data = df, REML = FALSE
+)
+summary(mixed_model3)
+
+r2_mixed_model3 <- r2(mixed_model3)
+print(r2_mixed_model3)
+VarCorr(mixed_model3)
+performance::check_collinearity(mixed_model3)
+
+#MODELO 4
+mixed_model4 <- lmer(
+  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + TN_c + TG_c + (1 | Id.jogador) + Período * Temp_c + Período * TN_c + Período * TG_c,
+  data = df, REML = FALSE
+)
+summary(mixed_model4)
+
+r2_mixed_model4 <- r2(mixed_model4)
+print(r2_mixed_model4)
+VarCorr(mixed_model4)
+performance::check_collinearity(mixed_model4)
+
+#MODELO 5
+mixed_model5 <- lmer(
+  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + WBGT_c + UR_c + (1 | Id.jogador) + Período * WBGT_c + Período * UR_c,
+  data = df, REML = FALSE
+)
+summary(mixed_model5)
+
+r2_mixed_model5 <- r2(mixed_model5)
+print(r2_mixed_model5)
+VarCorr(mixed_model5)
+performance::check_collinearity(mixed_model5)
+
+```
+
+##Tabelas com resultados dos modelos
+### Tabela comparativa entre os diferentes modelos (AIC, BIC e R2)
+```{r}
+#| echo: FALSE
+#| include: TRUE 
+models_to_compare <- list(
+  "Model 1" = mixed_model1,
+  "Model 2" = mixed_model2,
+  #"Model 3" = mixed_model3,
+  #"Model 4" = mixed_model4,
+  "Model 5" = mixed_model5
+)
+
+aic_bic_r2_df <- data.frame(
+  Model = character(),
+  AIC = numeric(),
+  BIC = numeric(),
+  R2_Conditional = numeric(), 
+  R2_Marginal = numeric(),  
+  stringsAsFactors = FALSE
+)
+
+for (model_name in names(models_to_compare)) {
+  model_obj <- models_to_compare[[model_name]]
+  model_stats <- glance(model_obj)
+  r2_values <- r2(model_obj)
+  current_aic <- model_stats$AIC
+  current_bic <- model_stats$BIC
+  current_r2_conditional <- r2_values$R2_conditional
+  current_r2_marginal <- r2_values$R2_marginal
+  aic_bic_r2_df <- rbind(aic_bic_r2_df, data.frame(
+    Model = model_name,
+    AIC = current_aic,
+    BIC = current_bic,
+    R2_Conditional = current_r2_conditional,
+    R2_Marginal = current_r2_marginal
+  ))
+}
+aic_bic_r2_df <- aic_bic_r2_df %>%
+  mutate(
+    AIC = round(AIC, 0),
+    BIC = round(BIC, 0),
+    R2_Conditional = round(R2_Conditional, 3), 
+    R2_Marginal = round(R2_Marginal, 3)       
+  ) %>%
+  arrange(AIC) # Or arrange(BIC) or arrange(R2_Conditional) or arrange(R2_Marginal)
+aic_bic_r2_table <- flextable(aic_bic_r2_df) %>%
+  set_header_labels(
+    Model = "Model",
+    AIC = "AIC",
+    BIC = "BIC",
+    R2_Conditional = "Conditional R²", 
+    R2_Marginal = "Marginal R²"       
+  ) %>%
+  set_caption(as_paragraph(as_b("Table: Model Comparison (AIC, BIC, and R-squared)"))) %>%
+  autofit() %>%
+  theme_booktabs() %>%
+  align(align = "center", part = "header") %>%
+  align(align = "center", part = "body") %>%
+  align(j = c("AIC", "BIC", "R2_Conditional", "R2_Marginal"), align = "right", part = "body")
+print(aic_bic_r2_table)
+
+```
+### Criação das tabelas com os resultados de cada modelo
+```{r}
+#| echo: FALSE
+#| include: TRUE
+generate_model_tables <- function(model_object, model_name) {
+  fixed_effects_df <- tidy(model_object, effects = "fixed") %>%
+    mutate(
+      estimate = round(estimate, 3),
+      std.error = round(std.error, 3),
+      statistic = round(statistic, 2),
+      df = round(df, 0),
+      p.value = scales::pvalue(p.value, accuracy = 0.001)
+    ) %>%
+    dplyr::select(term, estimate, std.error, df, statistic, p.value)
+
+  names(fixed_effects_df) <- c("Predictor", "Estimate", "Std. Error", "DF", "t-value", "P-value")
+
+  fixed_effects_table <- flextable(fixed_effects_df) %>%
+    set_header_labels(
+      Predictor = "Predictor Variable",
+      Estimate = "Estimate",
+      `Std. Error` = "Std. Error",
+      DF = "Degrees of Freedom",
+      `t-value` = "t-value",
+      `P-value` = "P-value"
+    ) %>%
+    set_caption(as_paragraph(as_b(paste0("Table: Fixed Effects Estimates for ", model_name)))) %>%
+    autofit() %>%
+    theme_booktabs() %>%
+    align(align = "center", part = "header") %>%
+    align(align = "center", part = "body") %>%
+    align(j = c("Estimate", "Std. Error", "DF", "t-value", "P-value"), align = "right", part = "body")
+
+  random_effects_df <- tidy(model_object, effects = "ran_pars") %>%
+    mutate(
+      estimate = round(estimate, 3)
+    ) %>%
+    dplyr::select(group, term, estimate)
+
+  names(random_effects_df) <- c("Group", "Parameter", "Estimate (Std.Dev.)")
+
+  random_effects_table <- flextable(random_effects_df) %>%
+    set_header_labels(
+      Group = "Random Effect Group",
+      Parameter = "Parameter Type",
+      `Estimate (Std.Dev.)` = "Estimate (Std.Dev. or Residual Std.Dev.)"
+    ) %>%
+    set_caption(as_paragraph(as_b(paste0("Table: Random Effects Estimates for ", model_name)))) %>%
+    autofit() %>%
+    theme_booktabs() %>%
+    align(align = "center", part = "header") %>%
+    align(align = "center", part = "body") %>%
+    align(j = "Estimate (Std.Dev.)", align = "right", part = "body")
+
+  model_summary_stats <- glance(model_object) %>%
+    dplyr::select(AIC, BIC, logLik, df.residual, nobs) %>%
+    mutate(
+      AIC = round(AIC, 0),
+      BIC = round(BIC, 0),
+      logLik = round(logLik, 0),
+      df.residual = round(df.residual, 0),
+      nobs = round(nobs, 0)
+    )
+
+  r2_values <- r2(model_object) %>%
+    as.data.frame() %>%
+    mutate_all(~round(., 3))
+
+  model_metrics_df <- data.frame(
+    Metric = c("Conditional R-squared", "Marginal R-squared", "AIC", "BIC",
+               "Log-Likelihood (ML)", "Residual DF", "Number of Observations"),
+    Value = c(sprintf("%.3f", r2_values$R2_conditional),
+              sprintf("%.3f", r2_values$R2_marginal),
+              sprintf("%.0f", model_summary_stats$AIC),
+              sprintf("%.0f", model_summary_stats$BIC),
+              sprintf("%.0f", model_summary_stats$logLik),
+              sprintf("%.0f", model_summary_stats$df.residual),
+              sprintf("%.0f", model_summary_stats$nobs))
+  )
+
+  model_metrics_table <- flextable(model_metrics_df) %>%
+    set_caption(as_paragraph(as_b(paste0("Table: Model Fit Statistics for ", model_name)))) %>%
+    autofit() %>%
+    theme_booktabs() %>%
+    align(align = "left", j = "Metric") %>%
+    align(align = "right", j = "Value")
+
+  # Return all tables in a list
+  return(list(
+    fixed_effects = fixed_effects_table,
+    random_effects = random_effects_table,
+    model_metrics = model_metrics_table
+  ))
+}
+
+models_to_process <- list(
+  mixed_model1 = mixed_model1,
+  mixed_model2 = mixed_model2,
+  mixed_model3 = mixed_model3,
+  mixed_model4 = mixed_model4,
+  mixed_model5 = mixed_model5
+)
+
+all_generated_tables <- list()
+
+for (name in names(models_to_process)) {
+  model_obj <- models_to_process[[name]]
+  cat(paste0("\n--- Generating tables for: ", name, " ---\n"))
+  tables_for_this_model <- generate_model_tables(model_obj, name)
+
+  # Store the tables in the main list, perhaps nested by model name
+  all_generated_tables[[name]] <- tables_for_this_model
+
+  print(tables_for_this_model$fixed_effects)
+  print(tables_for_this_model$random_effects)
+  print(tables_for_this_model$model_metrics)
+}
+
+```
+
+## Análise dos pressupostos do modelo linear de efeitos mistos
+### Análise da linearidade das VIs em relação à VD
+```{r}
+#| echo: FALSE
+#| include: TRUE
+#Gráficos de dispersão VI x VD
+plot(df$WBGT,VD)
+plot(df$UR, VD)
+plot(df$UA, VD)
+plot(df$Temp, VD)
+plot(df$TN, VD)
+plot(df$TG, VD)
+plot(df$RAD, VD)
+
+#Tabela de correlações VI x VD
+dependent_var <- "Zone4e5_min"
+predictor_vars <- c("WBGT", "UR", "UA", "Temp", "TN", "TG", "RAD")
+
+correlations_list <- list()
+
+for (pred in predictor_vars) {
+  # Enhanced checks for each predictor variable
+  if (!pred %in% names(df)) {
+    warning(paste0("Predictor '", pred, "' not found in 'df'. Skipping correlation for this predictor."))
+    problematic_predictors <- c(problematic_predictors, pred)
+    next
+  }
+  if (!is.numeric(df[[pred]])) {
+    warning(paste0("Predictor '", pred, "' is not numeric. Skipping correlation for this predictor as Pearson correlation requires numeric data."))
+    problematic_predictors <- c(problematic_predictors, pred)
+    next
+  }
+
+  valid_data <- na.omit(data.frame(DV = df[[dependent_var]], Pred = df[[pred]]))
+  if (nrow(valid_data) < 2) {
+    warning(paste0("Not enough complete observations to calculate correlation for '", pred, "'. Skipping."))
+    problematic_predictors <- c(problematic_predictors, pred)
+    next
+  }
+
+  correlation_r <- cor(df[[dependent_var]], df[[pred]],
+                       method = "pearson", use = "pairwise.complete.obs")
+
+  correlations_list[[pred]] <- correlation_r
+}
+
+if (length(correlations_list) == 0) {
+  stop("No correlations could be calculated. Please check your dependent variable, predictor variables, and data structure.")
+}
+correlation_df <- data.frame(
+  Predictor = names(correlations_list),
+  R_value = unlist(correlations_list)
+) %>%
+  arrange(desc(abs(R_value)))
+
+correlation_table <- flextable(correlation_df) %>%
+  set_header_labels(
+    Predictor = "Predictor Variable",
+    R_value = "Pearson's R"
+  ) %>%
+  set_caption(as_paragraph(as_b(paste0("Table: Pearson's Correlation (R) between ", dependent_var, " and Predictors")))) %>%
+  autofit() %>%
+  theme_booktabs() %>%
+  align(align = "left", j = "Predictor", part = "body") %>%
+  align(align = "right", j = "R_value", part = "body") %>%
+  colformat_double(j = "R_value", digits = 3)
+
+print(correlation_table)
+
+```
+### Análise da normalidade e homocedasticidade dos resíduos e dos efeitos aleatórios
+```{r}
+#| echo: FALSE
+#| include: TRUE
+run_model_diagnostics <- function(model_object, model_name) {
+
+  cat(paste0("\n--- Diagnostics for: ", model_name, " ---\n"))
+  cat("\n--- Checking Residuals ---\n")
+  model_residuals <- residuals(model_object)
+
+  if (length(model_residuals) > 5000) {
+    cat("Note: Shapiro-Wilk test is not recommended for n > 5000. Using Lilliefors test.\n")
+    shapiro_available <- FALSE
+  } else if (length(model_residuals) < 3) {
+    cat("Warning: Not enough data points for Shapiro-Wilk test.\n")
+    shapiro_available <- FALSE
+  } else {
+    shapiro_available <- TRUE
+  }
+  old_par <- par(no.readonly = TRUE)
+  on.exit(par(old_par))
+
+  par(mfrow = c(2, 2), mar = c(4, 4, 3, 2) + 0.1) 
+
+  hist(model_residuals,
+       main = paste("Histogram of Residuals (", model_name, ")"),
+       xlab = "Residuals",
+       col = "lightblue",
+       border = "black")
+
+  qqnorm(model_residuals,
+         main = paste("Q-Q Plot of Residuals (", model_name, ")"),
+         xlab = "Theoretical Quantiles",
+         ylab = "Sample Quantiles")
+  qqline(model_residuals, col = "red")
+  
+  plot(fitted(model_object), model_residuals,
+       main = paste("Residuals vs. Fitted (", model_name, ")"),
+       xlab = "Fitted Values",
+       ylab = "Residuals",
+       pch = 19,
+       col = "darkgreen",
+       cex = 0.8)
+  abline(h = 0, col = "red", lty = 2) 
+  if (shapiro_available) {
+    cat("\nShapiro-Wilk Test for Residuals:\n")
+    print(shapiro.test(model_residuals))
+  }
+  cat("\nLilliefors (Kolmogorov-Smirnov) Test for Residuals:\n")
+  print(lillie.test(model_residuals))
+
+  # --- RANDOM EFFECTS DIAGNOSTICS ---
+  cat("\n--- Checking Random Effects (Id.jogador Intercepts) ---\n")
+  random_effects_player <- tryCatch({
+    ranef(model_object)$Id.jogador$`(Intercept)`
+  }, error = function(e) {
+    message("Could not extract random effects for Id.jogador. Error: ", e$message)
+    return(NULL)
+  })
+
+  if (!is.null(random_effects_player) && length(random_effects_player) > 1) {
+    # Check for sufficient data for Shapiro-Wilk test on random effects
+    if (length(random_effects_player) > 5000) {
+      cat("Note: Shapiro-Wilk test is not recommended for n > 5000 for random effects. Using Lilliefors test.\n")
+      shapiro_re_available <- FALSE
+    } else if (length(random_effects_player) < 3) {
+      cat("Warning: Not enough data points for Shapiro-Wilk test on random effects.\n")
+      shapiro_re_available <- FALSE
+    } else {
+      shapiro_re_available = TRUE
+    }
+    par(mfrow = c(1, 2), mar = c(4, 4, 3, 2) + 0.1) # 1 row, 2 columns for RE plots
+    hist(random_effects_player,
+         main = paste("Histogram of Random Effects (", model_name, ")"),
+         xlab = "Random Intercepts",
+         col = "lightgreen",
+         border = "black")
+    qqnorm(random_effects_player,
+           main = paste("Q-Q Plot of Random Effects (", model_name, ")"),
+           xlab = "Theoretical Quantiles",
+           ylab = "Sample Quantiles")
+    qqline(random_effects_player, col = "red")
+
+    # Run Normality Tests for Random Effects
+    if (shapiro_re_available) {
+      cat("\nShapiro-Wilk Test for Random Effects:\n")
+      print(shapiro.test(random_effects_player))
+    }
+    cat("\nLilliefors (Kolmogorov-Smirnov) Test for Random Effects:\n")
+    print(lillie.test(random_effects_player))
+
+  } else {
+    cat("Skipping random effects diagnostics: No random effects found or insufficient data.\n")
+  }
+  cat(paste0("\n--- End Diagnostics for: ", model_name, " ---\n"))
+}
+
+models_to_process <- list(
+  mixed_model1 = mixed_model1,
+  mixed_model2 = mixed_model2,
+  mixed_model3 = mixed_model3,
+  mixed_model4 = mixed_model4,
+  mixed_model5 = mixed_model5
+)
+
+for (name in names(models_to_process)) {
+  model_obj <- models_to_process[[name]]
+  run_model_diagnostics(model_obj, name)
+}
+
+# Remember to reset graphical parameters after the loop if you want to use
+# default plotting settings for subsequent plots outside this script.
+# par(mfrow = c(1, 1)) # Uncomment if you need to manually reset
+
+```
+
+##Estimated Marginal Means (testes e gráficos)
+#```{r}
+# Interações entre duas variáveis categóricas (Rodar apenas caso a interação seja significativa)
+emm_period_fase <- emmeans(mixed_model, ~ Período * Fase)
+summary(emm_period_fase)
+
+#Comparação par a par - diferença entre os diferentes pares dos fatores, com teste de significância
+pairs(emm_period_fase, by = "Fase", adjust = "tukey")
+pairs(emm_period_fase, by = "Período", adjust = "tukey")
+
+# Gráfico para visualizar a interação entre os dois fatores
+emmip(mixed_model, Fase ~ Período) +
+  geom_line() +
+  geom_point() +
+  labs(
+    x = "Fase",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Período e Fase"
+  ) +
+  theme_minimal()
+
+
+#INTERAÇÕES VARIÁVEIS CATEGÓRICAS X NUMÉRICAS (Rodar apenas caso a interação seja significativa) 
+
+# Análise da interação entre a variável categórica e a variável numérica - Período x WBGT
+emm_trends_period_wbgt <- emtrends(mixed_model, ~ Período, var = "WBGT_c")
+summary(emm_trends_period_wbgt)
+
+emmip(mixed_model, Período ~ WBGT_c, #Gráfico
+      # Especifíca o intervalo de valores da VI para o gráfico
+      at = list(WBGT_c = seq(min(df$WBGT_c, na.rm = TRUE), max(df$WBGT_c, na.rm = TRUE), length.out = 50)),
+      cov.reduce = range
+) +
+  geom_line() +
+  labs(
+    x = "WBGT (centralizado à média)",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Período e WBGT"
+  ) +
+  theme_minimal()
+
+# Análise da interação entre a variável categórica e a variável numérica - Clima_origem x WBGT
+emm_trends_period_wbgt <- emtrends(mixed_model, ~ Clima_origem, var = "WBGT_c")
+summary(emm_trends_period_wbgt)
+
+emmip(mixed_model, Clima_origem ~ WBGT_c, #Gráfico
+      # Especifíca o intervalo de valores da VI para o gráfico
+      at = list(WBGT_c = seq(min(df$WBGT_c, na.rm = TRUE), max(df$WBGT_c, na.rm = TRUE), length.out = 50)),
+      cov.reduce = range
+) +
+  geom_line() +
+  labs(
+    x = "WBGT (centralizado à média)",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Clima de origem e WBGT"
+  ) +
+  theme_minimal()
+
+# Análise da interação entre a variável categórica e a variável numérica - Período x Temperatura Seca
+emm_trends_period_temp <- emtrends(mixed_model, ~ Período, var = "Temp_c")
+summary(emm_trends_period_temp)
+
+emmip(mixed_model, Período ~ Temp_c, #Gráfico
+      # Especifíca o intervalo de valores da VI para o gráfico
+      at = list(Temp_c = seq(min(df$Temp_c, na.rm = TRUE), max(df$Temp_c, na.rm = TRUE), length.out = 50)),
+      cov.reduce = range
+) +
+  geom_line() +
+  labs(
+    x = "Temperatura Seca (centralizado à média)",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Período e Temperatura Seca"
+  ) +
+  theme_minimal()
+
+# Análise da interação entre a variável categórica e a variável numérica - Período x Temperatura de Globo
+emm_trends_period_TG <- emtrends(mixed_model, ~ Período, var = "TG_c")
+summary(emm_trends_period_TG)
+
+emmip(mixed_model, Período ~ TG_c, #Gráfico
+      # Especifíca o intervalo de valores da VI para o gráfico
+      at = list(TG_c = seq(min(df$TG_c, na.rm = TRUE), max(df$TG_c, na.rm = TRUE), length.out = 50)),
+      cov.reduce = range
+) +
+  geom_line() +
+  labs(
+    x = "Temperatura de Globo (centralizado à média)",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Período e Temperatura de Globo"
+  ) +
+  theme_minimal()
+
+
+# Análise da interação entre a variável categórica e a variável numérica - Período x UR
+emm_trends_period_UR <- emtrends(mixed_model, ~ Período, var = "UR_c") #Tabela
+summary(emm_trends_period_UR)
+
+emmip(mixed_model, Período ~ UR_c, #Gráfico
+      # Especifíca o intervalo de valores da VI para o gráfico
+      at = list(UR_c = seq(min(df$UR_c, na.rm = TRUE), max(df$UR_c, na.rm = TRUE), length.out = 50)),
+      cov.reduce = range
+) +
+  geom_line() +
+  labs(
+    x = "UR (centralizado à média)",
+    y = "Estimativa da distância percorrida nas zonas de alta intensidade (4 e 5)",
+    title = "Interação entre Período do dia e Umidade Relativa"
+  ) +
+  theme_minimal()
+
+```
