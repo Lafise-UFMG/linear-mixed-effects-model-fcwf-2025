@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Instale o pacote pacman se ainda não estiver instalado
 # install.packages("pacman")
-pacman::p_load(haven, tidyverse, psych, easystats, apaTables, knitr, flextable, BlandAltmanLeh, openxlsx, rstatix, MKinfer, gtsummary, officer, ggplot2, blandr, afex, emmeans, effectsize, car, multcomp,dplyr,qqplotr,geepack,multcomp, lme4, lmerTest, performance, nortest, broom.mixed, scales)
+pacman::p_load(haven, tidyverse, psych, easystats, apaTables, knitr, flextable, BlandAltmanLeh, openxlsx, rstatix, MKinfer, gtsummary, officer, ggplot2, blandr, afex, emmeans, effectsize, car, multcomp,dplyr,qqplotr,geepack,multcomp, lme4, lmerTest, performance, nortest, broom.mixed, scales, GGally)
 
 
 # Para formatar tabelas
@@ -35,22 +35,22 @@ theme_set(theme_minimal())
 #| echo: FALSE
 #| include: FALSE
 # Carregando os dados
-df <- read.xlsx("/Users/rafaeltorres/Google Drive/Ciências do Esporte/Mestrado - Ciências do Esporte UFMG/Análise Copa do Mundo de Clubes 2025/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
+df <- read.xlsx("/Users/rafaeltorres/Documents/FCWC25/linear-mixed-effects-model-fcwf-2025/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
   as_factor()
 
-df$Fase <- as_factor(df$Fase)
-df$Período <- as_factor(df$Período)
-df$Período <- relevel(df$Período, ref = "Tarde")
-df$Clima_origem <- as_factor(df$Clima_origem)
-df$Id.jogador <- as_factor(df$Id.jogador)
+df$Stage <- as_factor(df$Stage)
+df$Time_of_day <- as_factor(df$Time_of_day)
+df$Time_of_day <- relevel(df$Time_of_day, ref = "Afternoon")
+df$Origin_climate <- as_factor(df$Origin_climate)
+df$Player_id <- as_factor(df$Player_id)
 df$Player_position <- as_factor(df$Player_position)
 df$Player_position <- relevel(df$Player_position, ref = "DF")
-df$Tempo.total.jogado <- as.numeric(df$Tempo.total.jogado)
-df <- filter(df, Tipo_estadio != "Fechado") #retira os dados dos jogos realizados no Mercedes-Benz Stadium
-df <- filter(df, Tempo.total.jogado >= 60) #retira os dados de jogadores que jogaram pouco tempo
+df$Played_minutes <- as.numeric(df$Played_minutes)
+df <- filter(df, Stadium_type != "Closed") #remove data from matches played at Mercedes-Benz Stadium
+df <- filter(df, Played_minutes >= 60) #remove players that didn't play enough time in a match
 df$WBGT <- as.numeric(df$WBGT)
-df$Diferença_Classificação <- as.numeric(df$Diferença_Classificação)
-df$Zone4e5_min <- as.numeric(df$Zone4e5_min)
+df$Ranking_difference <- as.numeric(df$Ranking_difference)
+df$Zone45_min <- as.numeric(df$Zone45_min)
 
 
 head(df)
@@ -62,7 +62,7 @@ head(df)
 #| echo: FALSE
 #| include: TRUE
 target_variable <- "Total_distance_min"
-grouping_variables <- c("Período", "Fase", "Player_position", "Clima_origem")
+grouping_variables <- c("Time_of_day", "Stage", "Player_position", "Origin_climate")
 all_summary_tables <- list()
 
 desc_general <- df %>%
@@ -70,7 +70,7 @@ desc_general <- df %>%
 
 all_summary_tables[["General"]] <- flextable(desc_general) %>%
   autofit() %>%
-  set_caption(paste("Estatísticas descritivas -", target_variable, "(Geral)"))
+  set_caption(paste("Descriptives -", target_variable, "(General)"))
 
 for (grp_var in grouping_variables) {
   desc_grouped <- df %>%
@@ -78,17 +78,17 @@ for (grp_var in grouping_variables) {
     get_summary_stats(!!sym(target_variable), type = "common") %>%
     ungroup()
 
-  table_caption <- paste("Estatísticas descritivas -", target_variable, "(Por", grp_var, ")")
+  table_caption <- paste("Descriptives -", target_variable, "(By", grp_var, ")")
   all_summary_tables[[grp_var]] <- flextable(desc_grouped) %>%
     autofit() %>%
     set_caption(table_caption)
 }
 
 print(all_summary_tables$General)
-print(all_summary_tables$Fase)
+print(all_summary_tables$Stage)
 print(all_summary_tables$Player_position)
-print(all_summary_tables$Clima_origem)
-print(all_summary_tables$Período)
+print(all_summary_tables$Origin_climate)
+print(all_summary_tables$Time_of_day)
 
 ```
 
@@ -97,9 +97,6 @@ print(all_summary_tables$Período)
 #| echo: FALSE
 #| include: FALSE
 df$WBGT_c <- scale(df$WBGT, center = TRUE, scale = FALSE)
-df$Diferença_Classificação_c <- scale(df$Diferença_Classificação, center = TRUE, scale = FALSE)
-df$Classificação_equipe_c <- scale(df$Classificação_equipe, center = TRUE, scale = FALSE)
-df$Classificação_adversário_c <- scale(df$Classificação_adversário, center = TRUE, scale = FALSE)
 df$Temp_c <- scale(df$Temp, center = TRUE, scale = FALSE)
 df$TN_c <- scale(df$TN, center = TRUE, scale = FALSE)
 df$TG_c <- scale(df$TG, center = TRUE, scale = FALSE)
@@ -114,11 +111,11 @@ df$Player_age_c <- scale(df$Player_age, center = TRUE, scale = FALSE)
 ```{r}
 #| echo: FALSE
 #| include: TRUE
-VD <- df$Top_Speed #Definindo a VD que será analisada
+VD <- df$Total_distance_min #Defining the dependent variable
 
-#MODELO 1
+#MODEL 1
 mixed_model1 <- lmer(
-  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + WBGT_c + (1 | Id.jogador) + Período * WBGT_c,
+  VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + (1 | Player_id) + Time_of_day * WBGT_c,
   data = df, REML = FALSE
 )
 summary(mixed_model1)
@@ -128,9 +125,9 @@ print(r2_mixed_model1)
 VarCorr(mixed_model1)
 performance::check_collinearity(mixed_model1)
 
-#MODELO 2
+#MODEL 2
 mixed_model2 <- lmer(
-  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + UR_c + RAD_c + (1 | Id.jogador),
+  VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + Temp_c + UR_c + RAD_c + (1 | Player_id) + Time_of_day * Temp_c + Time_of_day * UR_c,
   data = df, REML = FALSE
 )
 summary(mixed_model2)
@@ -140,9 +137,33 @@ print(r2_mixed_model2)
 VarCorr(mixed_model2)
 performance::check_collinearity(mixed_model2)
 
-#MODELO 3
+#MODEL 3 (removed because of high collinearity)
+#mixed_model3 <- lmer(
+ # VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + Temp_c + UA_c + RAD_c + (1 | Player_id),
+#  data = df, REML = FALSE
+#)
+#summary(mixed_model3)
+
+#r2_mixed_model3 <- r2(mixed_model3)
+#print(r2_mixed_model3)
+#VarCorr(mixed_model3)
+#performance::check_collinearity(mixed_model3)
+
+#MODEL 4 (removed because of high collinearity)
+#mixed_model4 <- lmer(
+ # VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + Temp_c + TN_c + TG_c + (1 | Player_id) + Time_of_day * Temp_c + Time_of_day * TG_c + Time_of_day * TN_c,
+  #data = df, REML = FALSE
+#)
+#summary(mixed_model4)
+
+#r2_mixed_model4 <- r2(mixed_model4)
+#print(r2_mixed_model4)
+#VarCorr(mixed_model4)
+#performance::check_collinearity(mixed_model4)
+
+#MODEL 3 (previously named MODEL 5)
 mixed_model3 <- lmer(
-  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + UA_c + RAD_c + (1 | Id.jogador) + Período * Temp_c + Período * UA_c + Período * RAD_c,
+  VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + UR_c + (1 | Player_id) + Time_of_day * UR_c + Time_of_day * WBGT_c,
   data = df, REML = FALSE
 )
 summary(mixed_model3)
@@ -151,30 +172,6 @@ r2_mixed_model3 <- r2(mixed_model3)
 print(r2_mixed_model3)
 VarCorr(mixed_model3)
 performance::check_collinearity(mixed_model3)
-
-#MODELO 4
-mixed_model4 <- lmer(
-  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + Temp_c + TN_c + TG_c + (1 | Id.jogador) + Período * Temp_c + Período * TN_c + Período * TG_c,
-  data = df, REML = FALSE
-)
-summary(mixed_model4)
-
-r2_mixed_model4 <- r2(mixed_model4)
-print(r2_mixed_model4)
-VarCorr(mixed_model4)
-performance::check_collinearity(mixed_model4)
-
-#MODELO 5
-mixed_model5 <- lmer(
-  VD ~ Fase + Período + Diferença_Classificação + Player_position + Player_age_c + Clima_origem + WBGT_c + UR_c + (1 | Id.jogador) + Período * WBGT_c + Período * UR_c,
-  data = df, REML = FALSE
-)
-summary(mixed_model5)
-
-r2_mixed_model5 <- r2(mixed_model5)
-print(r2_mixed_model5)
-VarCorr(mixed_model5)
-performance::check_collinearity(mixed_model5)
 
 ```
 
@@ -186,9 +183,9 @@ performance::check_collinearity(mixed_model5)
 models_to_compare <- list(
   "Model 1" = mixed_model1,
   "Model 2" = mixed_model2,
-  #"Model 3" = mixed_model3,
+  "Model 3" = mixed_model3 #previously named MODEL 5
   #"Model 4" = mixed_model4,
-  "Model 5" = mixed_model5
+  #"Model 5" = mixed_model5
 )
 
 aic_bic_r2_df <- data.frame(
@@ -339,9 +336,9 @@ generate_model_tables <- function(model_object, model_name) {
 models_to_process <- list(
   mixed_model1 = mixed_model1,
   mixed_model2 = mixed_model2,
-  mixed_model3 = mixed_model3,
-  mixed_model4 = mixed_model4,
-  mixed_model5 = mixed_model5
+  mixed_model3 = mixed_model3 #previously named MODEL 5
+  #mixed_model4 = mixed_model4,
+  #mixed_model5 = mixed_model5
 )
 
 all_generated_tables <- list()
@@ -376,7 +373,7 @@ plot(df$TG, VD)
 plot(df$RAD, VD)
 
 #Tabela de correlações VI x VD
-dependent_var <- "Zone4e5_min"
+dependent_var <- "Total_distance_min"
 predictor_vars <- c("WBGT", "UR", "UA", "Temp", "TN", "TG", "RAD")
 
 correlations_list <- list()
@@ -431,6 +428,19 @@ correlation_table <- flextable(correlation_df) %>%
 print(correlation_table)
 
 ```
+##PairPlot para visualização das relações VD x VI
+```{r}
+predictor_vars <- c("WBGT", "Temp", "UR", "RAD", "TG", "TN", "UA")
+
+ggpairs(df, columns = c(predictor_vars, "Total_distance_min")) +
+  ggtitle("PairPlot of Predictors and Dependent Variable") +
+  theme(plot.title = element_text(hjust = 0.5))
+# Diagonal: Histograms for each variable.
+# Lower half: Scatter plots showing the relationship between variables.
+# Upper half: Correlation coefficients.
+
+```
+
 ### Análise da normalidade e homocedasticidade dos resíduos e dos efeitos aleatórios
 ```{r}
 #| echo: FALSE
@@ -483,11 +493,11 @@ run_model_diagnostics <- function(model_object, model_name) {
   print(lillie.test(model_residuals))
 
   # --- RANDOM EFFECTS DIAGNOSTICS ---
-  cat("\n--- Checking Random Effects (Id.jogador Intercepts) ---\n")
+  cat("\n--- Checking Random Effects (Player_id Intercepts) ---\n")
   random_effects_player <- tryCatch({
-    ranef(model_object)$Id.jogador$`(Intercept)`
+    ranef(model_object)$Player_id$`(Intercept)`
   }, error = function(e) {
-    message("Could not extract random effects for Id.jogador. Error: ", e$message)
+    message("Could not extract random effects for Player_id. Error: ", e$message)
     return(NULL)
   })
 
@@ -531,9 +541,9 @@ run_model_diagnostics <- function(model_object, model_name) {
 models_to_process <- list(
   mixed_model1 = mixed_model1,
   mixed_model2 = mixed_model2,
-  mixed_model3 = mixed_model3,
-  mixed_model4 = mixed_model4,
-  mixed_model5 = mixed_model5
+  mixed_model3 = mixed_model3 #Previously named MODEL5
+  #mixed_model4 = mixed_model4,
+  #mixed_model5 = mixed_model5
 )
 
 for (name in names(models_to_process)) {
@@ -545,7 +555,11 @@ for (name in names(models_to_process)) {
 # default plotting settings for subsequent plots outside this script.
 # par(mfrow = c(1, 1)) # Uncomment if you need to manually reset
 
+#res <- residuals(mixed_model3)
+#res_sorted <- sort(res, decreasing = TRUE)
 ```
+
+
 
 ##Estimated Marginal Means (testes e gráficos)
 #```{r}
