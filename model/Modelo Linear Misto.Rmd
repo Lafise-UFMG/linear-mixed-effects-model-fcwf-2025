@@ -35,7 +35,7 @@ theme_set(theme_minimal())
 #| echo: FALSE
 #| include: FALSE
 # Carregando os dados
-df <- read.xlsx("/Users/rafaeltorres/Documents/FCWC25/linear-mixed-effects-model-fcwf-2025/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
+df <- read.xlsx("/home/usuario-leticia/Desktop/Samuel/linear-mixed-effects-model-fcwf-2025/data/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
   as_factor()
 
 df$Stage <- as_factor(df$Stage)

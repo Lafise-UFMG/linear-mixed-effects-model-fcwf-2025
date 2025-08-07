@@ -1,0 +1,25 @@
+# Ambientes virtuais
+.venv/
+venv/
+
+# IDEs
+.idea/
+.vscode/
+
+# Python
+*.pyc
+__pycache__/
+
+
+# Logs e temporários
+*.log
+*.out
+*.tmp
+*~
+*.swp
+
+# Sistema
+.DS_Store
+
+# Dados brutos 
+#data/*.xlsx
