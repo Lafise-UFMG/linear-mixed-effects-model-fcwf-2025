@@ -66,14 +66,14 @@ Este repositório contém a análise estatística do arquivo `(Jul_25) Dados dem
 7. **Suplementary material**
 
 ## Linearity check
-Fig S1. PairPlot between continuous predictors and high intensity distance covered per minute (Zones 4 and 5).
-
-Fig S2. PairPlot between continuous predictors and moderate intensity distance covered per minute (Zone 3).
-
-Fig S3. PairPlot between continuous predictors and low intensity distance covered per minute (Zones 1 and 2).
-
-Fig S4. PairPlot between continuous predictors and total distance covered per minute.
-![Fig S4](images/FigS4-Total_distance_PairPlot.png)
+**Fig S1. PairPlot between continuous predictors and high intensity distance covered per minute (Zones 4 and 5).**
+![Fig S1](images/FigS1-High-intensity-PairPlot.png)
+**Fig S2. PairPlot between continuous predictors and moderate intensity distance covered per minute (Zone 3).**
+![Fig S2](images/FigS2-Moderate-intensity-PairPlot.png)
+**Fig S3. PairPlot between continuous predictors and low intensity distance covered per minute (Zones 1 and 2).**
+![Fig S3](images/FigS3-Low-intensity-PairPlot.png)
+**Fig S4. PairPlot between continuous predictors and total distance covered per minute.**
+![Fig S4](images/FigS4-Total-distance-PairPlot.png)
 
 ## MODEL 1 - Assumption checks
 VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + (1 | Player_id) + Time_of_day * WBGT_c
@@ -81,28 +81,39 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 Table S1. Multicolinearity diagnosis
 
 ### High intensity distance covered per minute (Zones 4 and 5)
-Fig S5. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S5. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S5](images/FigS5-High-intensity-model1-residuals-check.png)
 Table S2. Mixed model 1: Kolgomorov-smirnov test for residuals normality
-Fig S6. Mixed model 1: Histogram and Q-Q Plot of random effects 
+
+**Fig S6. Mixed model 1: Histogram and Q-Q Plot of random effects**
+![Fig S6](images/FigS6-High-intensity-model1-random-effects-check.png)
+
 Table S3. Mixed model 1: Kolgomorov-smirnov test for random effects normality
 
 ### Moderate intensity distance covered per minute (Zone 3)
-Fig S7. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S7. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S7](images/FigS7-Moderate-intensity-model1-residuals-check.png)
 Table S4. Mixed model 1: Kolgomorov-smirnov test for residuals normality
-Fig S8. Mixed model 1: Histogram and Q-Q Plot of random effects 
+
+**Fig S8. Mixed model 1: Histogram and Q-Q Plot of random effects**
+![Fig S8](images/FigS8-Moderate-intensity-model1-random-effects-check.png)
 Table S5. Mixed model 1: Kolgomorov-smirnov test for random effects normality
 
 ### Low intensity distance covered per minute (Zones 1 and 2)
-Fig S9. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S9. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S9](images/FigS9-Low-intensity-model1-residuals-check.png)
 Table S6. Mixed model 1: Kolgomorov-smirnov test for residuals normality
-Fig S10. Mixed model 1: Histogram and Q-Q Plot of random effects 
+
+**Fig S10. Mixed model 1: Histogram and Q-Q Plot of random effects**
+![Fig S10](images/FigS10-Low-intensity-model1-random-effects-check.png)
 Table S7. Mixed model 1: Kolgomorov-smirnov test for random effects normality
 
 ### Total distance covered per minute
-Fig S11. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S11. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
 ![Fig S11](images/FigS11-Total-distance-model1-residuals-check.png)
 
 Table S8. Mixed model 1: Kolgomorov-smirnov test for residuals normality
+
 Fig S12. Mixed model 1: Histogram and Q-Q Plot of random effects
 ![Fig S12](images/FigS12-Total-distance-model1-random-effects-check.png)
 Table S9. Mixed model 1: Kolgomorov-smirnov test for random effects normality
@@ -114,29 +125,36 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 Table S10. Multicolinearity diagnosis
 
 ### High intensity distance covered per minute (Zones 4 and 5)
-Fig S13. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S13. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S13](images/FigS13-High-intensity-model2-residuals-check.png)
 Table S11. Mixed model 2: Kolgomorov-smirnov test for residuals normality
-Fig S14. Mixed model 2: Histogram and Q-Q Plot of random effects 
+
+**Fig S14. Mixed model 2: Histogram and Q-Q Plot of random effects**
+![Fig S14](images/FigS14-High-intensity-model2-random-effects-check.png)
 Table S12. Mixed model 2: Kolgomorov-smirnov test for random effects normality
 
 ### Moderate intensity distance covered per minute (Zone 3)
-Fig S15. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S15. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S15](images/FigS15-Moderate-intensity-model2-residuals-check.png)
 Table S13. Mixed model 2: Kolgomorov-smirnov test for residuals normality
-Fig S16. Mixed model 2: Histogram and Q-Q Plot of random effects 
+**Fig S16. Mixed model 2: Histogram and Q-Q Plot of random effects**
+![Fig S16](images/FigS16-Moderate-intensity-model2-random-effects-check.png)
 Table S14. Mixed model 2: Kolgomorov-smirnov test for random effects normality
 
 ### Low intensity distance covered per minute (Zones 1 and 2)
-Fig S17. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S17. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S17](images/FigS17-Low-intensity-model2-residuals-check.png)
 Table S15. Mixed model 2: Kolgomorov-smirnov test for residuals normality
-Fig S18. Mixed model 2: Histogram and Q-Q Plot of random effects 
+**Fig S18. Mixed model 2: Histogram and Q-Q Plot of random effects**
+![Fig S18](images/FigS18-Low-intensity-model2-random-effects-check.png)
 Table S16. Mixed model 2: Kolgomorov-smirnov test for random effects normality
 
 ### Total distance covered per minute
-Fig S19. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S19. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
 ![Fig S19](images/FigS19-Total-distance-model2-residuals-check.png)
-
 Table S17. Mixed model 2: Kolgomorov-smirnov test for residuals normality
-Fig S20. Mixed model 2: Histogram and Q-Q Plot of random effects
+
+**Fig S20. Mixed model 2: Histogram and Q-Q Plot of random effects**
 ![Fig S20](images/FigS20-Total-distance-model2-random-effects-check.png)
 
 Table S18. Mixed model 2: Kolgomorov-smirnov test for random effects normality
@@ -146,29 +164,38 @@ Table S18. Mixed model 2: Kolgomorov-smirnov test for random effects normality
 VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + UR_c + (1 | Player_id) + Time_of_day * UR_c + Time_of_day * WBGT_c
 
 ### High intensity distance covered per minute (Zones 4 and 5)
-Fig S21. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S21. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S21](images/FigS21-High-intensity-model5-residuals-check.png)
 Table S19. Mixed model 5: Kolgomorov-smirnov test for residuals normality
+
 Fig S22. Mixed model 5: Histogram and Q-Q Plot of random effects 
+![Fig S22](images/FigS22-High-intensity-model5-random-effects-check.png)
 Table S20. Mixed model 5: Kolgomorov-smirnov test for random effects normality
 
 ### Moderate intensity distance covered per minute (Zone 3)
-Fig S23. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S23. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S23](images/FigS23-Moderate-intensity-model5-residuals-check.png)
 Table S21. Mixed model 5: Kolgomorov-smirnov test for residuals normality
-Fig S24. Mixed model 5: Histogram and Q-Q Plot of random effects 
+
+**Fig S24. Mixed model 5: Histogram and Q-Q Plot of random effects**
+![Fig S24](images/FigS24-Moderate-intensity-model5-random-effects-check.png)
 Table S22. Mixed model 5: Kolgomorov-smirnov test for random effects normality
 
 ### Low intensity distance covered per minute (Zones 1 and 2)
-Fig S25. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S25. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+![Fig S25](images/FigS25-Low-intensity-model5-residuals-check.png)
 Table S23. Mixed model 5: Kolgomorov-smirnov test for residuals normality
-Fig S26. Mixed model 5: Histogram and Q-Q Plot of random effects 
+**Fig S26. Mixed model 5: Histogram and Q-Q Plot of random effects**
+![Fig S26](images/FigS26-Low-intensity-model5-random-effects-check.png)
 Table S24. Mixed model 5: Kolgomorov-smirnov test for random effects normality
 
 ### Total distance covered per minute
-Fig S27. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals
+**Fig S27. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
 ![Fig S27](images/FigS27-Total-distance-model5-residuals-check.png)
 
 Table S25. Mixed model 5: Kolgomorov-smirnov test for residuals normality
-Fig S28. Mixed model 5: Histogram and Q-Q Plot of random effects
+
+**Fig S28. Mixed model 5: Histogram and Q-Q Plot of random effects**
 ![Fig S28](images/FigS28-Total-distance-model5-random-effects-check.png)
 
 Table S26. Mixed model 5: Kolgomorov-smirnov test for random effects normality
