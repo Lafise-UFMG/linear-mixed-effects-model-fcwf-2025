@@ -35,7 +35,7 @@ theme_set(theme_minimal())
 #| echo: FALSE
 #| include: FALSE
 # Carregando os dados
-df <- read.xlsx("/home/usuario-leticia/Desktop/Samuel/linear-mixed-effects-model-fcwf-2025/data/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
+df <- read.xlsx("/Users/rafaeltorres/Documents/FCWC25/linear-mixed-effects-model-fcwf-2025/data/(Jul_25) Dados demandas físicas FCWC 2025.xlsx") %>% 
   as_factor()
 
 df$Stage <- as_factor(df$Stage)
@@ -54,6 +54,7 @@ df$Zone45_min <- as.numeric(df$Zone45_min)
 
 
 head(df)
+
 
 ```
 
@@ -161,17 +162,17 @@ performance::check_collinearity(mixed_model2)
 #VarCorr(mixed_model4)
 #performance::check_collinearity(mixed_model4)
 
-#MODEL 3 (previously named MODEL 5)
-mixed_model3 <- lmer(
+#MODEL 5 (previously named MODEL 5)
+mixed_model5 <- lmer(
   VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + UR_c + (1 | Player_id) + Time_of_day * UR_c + Time_of_day * WBGT_c,
   data = df, REML = FALSE
 )
-summary(mixed_model3)
+summary(mixed_model5)
 
-r2_mixed_model3 <- r2(mixed_model3)
-print(r2_mixed_model3)
-VarCorr(mixed_model3)
-performance::check_collinearity(mixed_model3)
+r2_mixed_model5 <- r2(mixed_model5)
+print(r2_mixed_model5)
+VarCorr(mixed_model5)
+performance::check_collinearity(mixed_model5)
 
 ```
 
@@ -183,9 +184,9 @@ performance::check_collinearity(mixed_model3)
 models_to_compare <- list(
   "Model 1" = mixed_model1,
   "Model 2" = mixed_model2,
-  "Model 3" = mixed_model3 #previously named MODEL 5
+  #"Model 3" = mixed_model3
   #"Model 4" = mixed_model4,
-  #"Model 5" = mixed_model5
+  "Model 5" = mixed_model5
 )
 
 aic_bic_r2_df <- data.frame(
@@ -336,9 +337,9 @@ generate_model_tables <- function(model_object, model_name) {
 models_to_process <- list(
   mixed_model1 = mixed_model1,
   mixed_model2 = mixed_model2,
-  mixed_model3 = mixed_model3 #previously named MODEL 5
+  #mixed_model3 = mixed_model3,
   #mixed_model4 = mixed_model4,
-  #mixed_model5 = mixed_model5
+  mixed_model5 = mixed_model5
 )
 
 all_generated_tables <- list()
@@ -541,9 +542,9 @@ run_model_diagnostics <- function(model_object, model_name) {
 models_to_process <- list(
   mixed_model1 = mixed_model1,
   mixed_model2 = mixed_model2,
-  mixed_model3 = mixed_model3 #Previously named MODEL5
+  #mixed_model3 = mixed_model3, 
   #mixed_model4 = mixed_model4,
-  #mixed_model5 = mixed_model5
+  mixed_model5 = mixed_model5
 )
 
 for (name in names(models_to_process)) {
