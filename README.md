@@ -95,13 +95,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | WBGT_c | 1.69 | [1.56, 1.85] | 1.30 | 0.59 | [0.54, 0.64] |
 | Time_of_day:WBGT_c | 1.59 | [1.47, 1.73] | 1.26 | 0.63 | [0.58, 0.68] |
 
-**Fig S5. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+**Fig S5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
 <img src="images/FigS5-High-intensity-model1-residuals-check.png" width="800" alt="Fig S5">
 
-**Fig S6. Mixed model 1: Histogram and Q-Q Plot of random effects**
-![Fig S6](images/FigS6-High-intensity-model1-random-effects-check.png)
+**Fig S6: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS6-High-intensity-model1-random-effects-check.png" width="800" alt="Fig S6">
 
-**Table S2. Mixed model 1: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S2: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.04|0.003*|
@@ -120,13 +120,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | WBGT_c | 1.68 | [1.56, 1.84] | 1.30 | 0.59 | [0.54, 0.64] |
 | Time_of_day:WBGT_c | 1.57 | [1.46, 1.71] | 1.25 | 0.64 | [0.58, 0.69] |
 
-**Fig S7. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S7](images/FigS7-Moderate-intensity-model1-residuals-check.png)
+**Fig S7: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS7-Moderate-intensity-model1-residuals-check.png" width="800" alt="Fig S7">
 
-**Fig S8. Mixed model 1: Histogram and Q-Q Plot of random effects**
-![Fig S8](images/FigS8-Moderate-intensity-model1-random-effects-check.png)
+**Fig S8: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS8-Moderate-intensity-model1-random-effects-check.png" width="800" alt="Fig S8">
 
-**Table S4. Mixed model 1: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S4: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.03|0.009*|
@@ -145,13 +145,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | WBGT_c | 1.69 | [1.56, 1.85] | 1.30 | 0.59 | [0.54, 0.64] |
 | Time_of_day:WBGT_c | 1.58 | [1.47, 1.73] | 1.26 | 0.63 | [0.58, 0.68] |
 
-**Fig S9. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S9](images/FigS9-Low-intensity-model1-residuals-check.png)
+**Fig S9: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS9-Low-intensity-model1-residuals-check.png" width="800" alt="Fig S9">
 
-**Fig S10. Mixed model 1: Histogram and Q-Q Plot of random effects**
-![Fig S10](images/FigS10-Low-intensity-model1-random-effects-check.png)
+**Fig S10: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS10-Low-intensity-model1-random-effects-check.png" width="800" alt="Fig S10">
 
-**Table S6. Mixed model 1: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S6: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.02|0.4|
@@ -171,13 +171,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 |WBGT_c |1.68 | [1.55, 1.84]|         1.30 |     0.59 |    [0.54, 0.64]|
 |Time_of_day:WBGT_c | 1.57 | [1.46, 1.71] |        1.25|      0.64|     [0.58, 0.69]|
 
-**Fig S11. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S11](images/FigS11-Total-distance-model1-residuals-check.png)
+**Fig S11: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS11-Total-distance-model1-residuals-check.png" width="800" alt="Fig S11">
 
-**Fig S12. Mixed model 1: Histogram and Q-Q Plot of random effects**
-![Fig S12](images/FigS12-Total-distance-model1-random-effects-check.png)
+**Fig S12: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS12-Total-distance-model1-random-effects-check.png" width="800" alt="Fig S12">
 
-**Table S8. Mixed model 1: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S8: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.03|0.04*|
@@ -202,13 +202,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:UR_c | 2.15 | [1.97, 2.37] | 1.47 | 0.46 | [0.42, 0.51] |
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.16, 0.20] |
 
-**Fig S13. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S13](images/FigS13-High-intensity-model2-residuals-check.png)
+**Fig S13: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS13-High-intensity-model2-residuals-check.png" width="800" alt="Fig S13">
 
-**Fig S14. Mixed model 2: Histogram and Q-Q Plot of random effects**
-![Fig S14](images/FigS14-High-intensity-model2-random-effects-check.png)
+**Fig S14: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS14-High-intensity-model2-random-effects-check.png" width="800" alt="Fig S14">
 
-**Table S10. Mixed model 2: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S10: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.04|0.001*|
@@ -230,13 +230,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:UR_c | 2.14 | [1.97, 2.36] | 1.46 | 0.47 | [0.42, 0.51] |
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.17, 0.20] |
 
-**Fig S15. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S15](images/FigS15-Moderate-intensity-model2-residuals-check.png)
+**Fig S15: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS15-Moderate-intensity-model2-residuals-check.png" width="800" alt="Fig S15"
 
-**Fig S16. Mixed model 2: Histogram and Q-Q Plot of random effects**
-![Fig S16](images/FigS16-Moderate-intensity-model2-random-effects-check.png)
+**Fig S16: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS16-Moderate-intensity-model2-random-effects-check.png" width="800" alt="Fig S16">
 
-**Table S12. Mixed model 2: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S12: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.04|0.002*|
@@ -258,13 +258,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:UR_c | 2.15 | [1.97, 2.37] | 1.47 | 0.46 | [0.42, 0.51] |
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.17, 0.20] |
 
-**Fig S17. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S17](images/FigS17-Low-intensity-model2-residuals-check.png)
+**Fig S17: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS17-Low-intensity-model2-residuals-check.png" width="800" alt="Fig S17">
 
-**Fig S18. Mixed model 2: Histogram and Q-Q Plot of random effects**
-![Fig S18](images/FigS18-Low-intensity-model2-random-effects-check.png)
+**Fig S18: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS18-Low-intensity-model2-random-effects-check.png" width="800" alt="Fig S18">
 
-**Table S14. Mixed model 2: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S14: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.02|0.4|
@@ -286,18 +286,17 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 |Time_of_day:UR_c |2.14 |[1.96, 2.35] |        1.46|      0.47|     [0.42, 0.51]|
 |RAD_c |5.44 |[4.89, 6.06]|         2.33|      0.18|     [0.17, 0.20]|
 
-**Fig S19. Mixed model 2: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S19](images/FigS19-Total-distance-model2-residuals-check.png)
+**Fig S19: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS19-Total-distance-model2-residuals-check.png" width="800" alt="Fig S19">
 
-**Fig S20. Mixed model 2: Histogram and Q-Q Plot of random effects**
-![Fig S20](images/FigS20-Total-distance-model2-random-effects-check.png)
+**Fig S20: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS20-Total-distance-model2-random-effects-check.png" width="800" alt="Fig S20">
 
-**Table S16. Mixed model 2: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S16: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.03|0.06|
 |Random effects|0.02|0.9|
-
 
 ## MODEL 5 - Assumption checks
 VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c + Origin_climate + WBGT_c + UR_c + (1 | Player_id) + Time_of_day * UR_c + Time_of_day * WBGT_c
@@ -317,13 +316,13 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:UR_c | 1.72 | [1.59, 1.88] | 1.31 | 0.58 | [0.53, 0.63] |
 | Time_of_day:WBGT_c | 1.70 | [1.57, 1.86] | 1.30 | 0.59 | [0.54, 0.64] |
 
-**Fig S21. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S21](images/FigS21-High-intensity-model5-residuals-check.png)
+**Fig S21: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS21-High-intensity-model5-residuals-check.png" width="800" alt="Fig S21">
 
-Fig S22. Mixed model 5: Histogram and Q-Q Plot of random effects 
-![Fig S22](images/FigS22-High-intensity-model5-random-effects-check.png)
+**Fig S22: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS22-High-intensity-model5-random-effects-check.png" width="800" alt="Fig S22">
 
-**Table S18. Mixed model 5: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S18: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.04|0.0009*|
@@ -344,13 +343,13 @@ Fig S22. Mixed model 5: Histogram and Q-Q Plot of random effects
 | Time_of_day:UR_c | 1.70 | [1.57, 1.86] | 1.31 | 0.59 | [0.54, 0.64] |
 | Time_of_day:WBGT_c | 1.69 | [1.56, 1.84] | 1.30 | 0.59 | [0.54, 0.64] |
 
-**Fig S23. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S23](images/FigS23-Moderate-intensity-model5-residuals-check.png)
+**Fig S23: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS23-Moderate-intensity-model5-residuals-check.png" width="800" alt="Fig S23">
 
-**Fig S24. Mixed model 5: Histogram and Q-Q Plot of random effects**
-![Fig S24](images/FigS24-Moderate-intensity-model5-random-effects-check.png)
+**Fig S24: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS24-Moderate-intensity-model5-random-effects-check.png" width="800" alt="Fig S24">
 
-**Table S20. Mixed model 5: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S20: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.03|0.008*|
@@ -371,13 +370,13 @@ Fig S22. Mixed model 5: Histogram and Q-Q Plot of random effects
 | Time_of_day:UR_c | 1.72 | [1.59, 1.88] | 1.31 | 0.58 | [0.53, 0.63] |
 | Time_of_day:WBGT_c | 1.70 | [1.57, 1.86] | 1.30 | 0.59 | [0.54, 0.64] |
 
-**Fig S25. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S25](images/FigS25-Low-intensity-model5-residuals-check.png)
+**Fig S25: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS25-Low-intensity-model5-residuals-check.png" width="800" alt="Fig S25">
 
-**Fig S26. Mixed model 5: Histogram and Q-Q Plot of random effects**
-![Fig S26](images/FigS26-Low-intensity-model5-random-effects-check.png)
+**Fig S26: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS26-Low-intensity-model5-random-effects-check.png" width="800" alt="Fig S26">
 
-**Table S22. Mixed model 5: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S22: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.02|0.3|
@@ -398,13 +397,13 @@ Fig S22. Mixed model 5: Histogram and Q-Q Plot of random effects
 |Time_of_day:UR_c |1.70| [1.57, 1.86]|         1.30|      0.59|     [0.54, 0.64]|
 |Time_of_day:WBGT_c |1.69 |[1.56, 1.84]|         1.30|      0.59|     [0.54, 0.64]|
 
-**Fig S27. Mixed model 5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
-![Fig S27](images/FigS27-Total-distance-model5-residuals-check.png)
+**Fig S27: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+<img src="images/FigS27-Total-distance-model5-residuals-check.png" width="800" alt="Fig S27">
 
-**Fig S28. Mixed model 5: Histogram and Q-Q Plot of random effects**
-![Fig S28](images/FigS28-Total-distance-model5-random-effects-check.png)
+**Fig S28: Histogram and Q-Q Plot of random effects**
+<img src="images/FigS28-Total-distance-model5-random-effects-check.png" width="800" alt="Fig S28">
 
-**Table S24. Mixed model 5: Kolmogorov-Smirnov test for residuals and random effects normality check**
+**Table S24: Kolmogorov-Smirnov test for residuals and random effects normality check**
 |Data| D | p-value|
 |:--:|:--:|:-----:|
 |Residuals|0.03|0.06|
