@@ -63,19 +63,23 @@ Este repositório contém a análise estatística do arquivo `(Jul_25) Dados dem
 - scikit-learn (centralização)
 - scipy (testes estatísticos)
 
-7. **Suplementary material**
+# Supplementary material
 
 ## Linearity check
-**Fig S1. PairPlot between continuous predictors and high intensity distance covered per minute (Zones 4 and 5).**
+**Fig S1: PairPlot between continuous predictors and high intensity distance covered per minute (Zones 4 and 5)**
+
 <img src="images/FigS1-High-intensity-PairPlot.png" width="800" alt="Fig S1">
 
-**Fig S2. PairPlot between continuous predictors and moderate intensity distance covered per minute (Zone 3).**
+**Fig S2: PairPlot between continuous predictors and moderate intensity distance covered per minute (Zone 3)**
+
 <img src="images/FigS2-Moderate-intensity-PairPlot.png" width="800" alt="Fig S2">
 
-**Fig S3. PairPlot between continuous predictors and low intensity distance covered per minute (Zones 1 and 2).**
+**Fig S3: PairPlot between continuous predictors and low intensity distance covered per minute (Zones 1 and 2).**
+
 <img src="images/FigS3-Low-intensity-PairPlot.png" width="800" alt="Fig S3">
 
-**Fig S4. PairPlot between continuous predictors and total distance covered per minute.**
+**Fig S4: PairPlot between continuous predictors and total distance covered per minute**
+
 <img src="images/FigS4-Total-distance-PairPlot.png" width="800" alt="Fig S4">
 
 
@@ -96,9 +100,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.59 | [1.47, 1.73] | 1.26 | 0.63 | [0.58, 0.68] |
 
 **Fig S5: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS5-High-intensity-model1-residuals-check.png" width="800" alt="Fig S5">
 
 **Fig S6: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS6-High-intensity-model1-random-effects-check.png" width="800" alt="Fig S6">
 
 **Table S2: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -121,9 +127,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.57 | [1.46, 1.71] | 1.25 | 0.64 | [0.58, 0.69] |
 
 **Fig S7: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS7-Moderate-intensity-model1-residuals-check.png" width="800" alt="Fig S7">
 
 **Fig S8: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS8-Moderate-intensity-model1-random-effects-check.png" width="800" alt="Fig S8">
 
 **Table S4: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -146,9 +154,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.58 | [1.47, 1.73] | 1.26 | 0.63 | [0.58, 0.68] |
 
 **Fig S9: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS9-Low-intensity-model1-residuals-check.png" width="800" alt="Fig S9">
 
 **Fig S10: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS10-Low-intensity-model1-random-effects-check.png" width="800" alt="Fig S10">
 
 **Table S6: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -172,9 +182,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 |Time_of_day:WBGT_c | 1.57 | [1.46, 1.71] |        1.25|      0.64|     [0.58, 0.69]|
 
 **Fig S11: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS11-Total-distance-model1-residuals-check.png" width="800" alt="Fig S11">
 
 **Fig S12: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS12-Total-distance-model1-random-effects-check.png" width="800" alt="Fig S12">
 
 **Table S8: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -203,9 +215,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.16, 0.20] |
 
 **Fig S13: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS13-High-intensity-model2-residuals-check.png" width="800" alt="Fig S13">
 
 **Fig S14: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS14-High-intensity-model2-random-effects-check.png" width="800" alt="Fig S14">
 
 **Table S10: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -231,9 +245,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.17, 0.20] |
 
 **Fig S15: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS15-Moderate-intensity-model2-residuals-check.png" width="800" alt="Fig S15"
 
 **Fig S16: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS16-Moderate-intensity-model2-random-effects-check.png" width="800" alt="Fig S16">
 
 **Table S12: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -259,9 +275,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 5.44 | [4.89, 6.06] | 2.33 | 0.18 | [0.17, 0.20] |
 
 **Fig S17: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS17-Low-intensity-model2-residuals-check.png" width="800" alt="Fig S17">
 
 **Fig S18: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS18-Low-intensity-model2-random-effects-check.png" width="800" alt="Fig S18">
 
 **Table S14: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -287,9 +305,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 |RAD_c |5.44 |[4.89, 6.06]|         2.33|      0.18|     [0.17, 0.20]|
 
 **Fig S19: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS19-Total-distance-model2-residuals-check.png" width="800" alt="Fig S19">
 
 **Fig S20: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS20-Total-distance-model2-random-effects-check.png" width="800" alt="Fig S20">
 
 **Table S16: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -317,9 +337,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.70 | [1.57, 1.86] | 1.30 | 0.59 | [0.54, 0.64] |
 
 **Fig S21: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS21-High-intensity-model5-residuals-check.png" width="800" alt="Fig S21">
 
 **Fig S22: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS22-High-intensity-model5-random-effects-check.png" width="800" alt="Fig S22">
 
 **Table S18: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -344,9 +366,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.69 | [1.56, 1.84] | 1.30 | 0.59 | [0.54, 0.64] |
 
 **Fig S23: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS23-Moderate-intensity-model5-residuals-check.png" width="800" alt="Fig S23">
 
 **Fig S24: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS24-Moderate-intensity-model5-random-effects-check.png" width="800" alt="Fig S24">
 
 **Table S20: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -371,9 +395,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_day:WBGT_c | 1.70 | [1.57, 1.86] | 1.30 | 0.59 | [0.54, 0.64] |
 
 **Fig S25: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS25-Low-intensity-model5-residuals-check.png" width="800" alt="Fig S25">
 
 **Fig S26: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS26-Low-intensity-model5-random-effects-check.png" width="800" alt="Fig S26">
 
 **Table S22: Kolmogorov-Smirnov test for residuals and random effects normality check**
@@ -398,9 +424,11 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 |Time_of_day:WBGT_c |1.69 |[1.56, 1.84]|         1.30|      0.59|     [0.54, 0.64]|
 
 **Fig S27: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
 <img src="images/FigS27-Total-distance-model5-residuals-check.png" width="800" alt="Fig S27">
 
 **Fig S28: Histogram and Q-Q Plot of random effects**
+
 <img src="images/FigS28-Total-distance-model5-random-effects-check.png" width="800" alt="Fig S28">
 
 **Table S24: Kolmogorov-Smirnov test for residuals and random effects normality check**
