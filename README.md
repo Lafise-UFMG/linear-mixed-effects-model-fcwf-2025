@@ -98,7 +98,12 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 **Fig S5. Mixed model 1: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
 <img src="images/FigS5-High-intensity-model1-residuals-check.png" width="800" alt="Fig S5">
 
-**Table S2. Mixed model 1: Kolmogorov-Smirnov test for residuals normality**
+**Table S2. Mixed model 1: Kolmogorov-Smirnov test for residuals and random effects normality check**
+|Data| D | p-value|
+|:--:|:--:|:-----:|
+|Residuals|0.04|0.003*|
+|Random effects|0.05|0.01*|
+
 
 **Fig S6. Mixed model 1: Histogram and Q-Q Plot of random effects**
 ![Fig S6](images/FigS6-High-intensity-model1-random-effects-check.png)
