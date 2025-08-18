@@ -551,6 +551,416 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 **Supplementary Table 24:** Kolmogorov-Smirnov test results to check the assumption of normality for both the model residuals and the random effects. The table shows the D statistic and the p-value for each test.
 
 
+## Fixed and random effects estimates, and full model statistics
+
+### MODEL 1
+#### High intensity distance covered per minute (Zones 4 and 5)
+
+**Table S25: Fixed effects estimates for Model 1 - High intensity distance covered per minute (Zones 4 and 5)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 6.562 | 0.250 | 531 | 26.21 | <0.001 |
+| StagePlayoffs | 0.021 | 0.152 | 926 | 0.14 | 0.889 |
+| Time_of_dayEvening | 0.382 | 0.128 | 871 | 2.99 | 0.003 |
+| Ranking_difference | 0.004 | 0.005 | 1 064 | 0.74 | 0.462 |
+| Player_positionMF | 0.600 | 0.238 | 434 | 2.52 | 0.012 |
+| Player_positionFW | 1.506 | 0.268 | 446 | 5.62 | <0.001 |
+| Player_age_c | -0.087 | 0.023 | 461 | -3.79 | <0.001 |
+| Origin_climateTemperate | 0.041 | 0.234 | 447 | 0.18 | 0.860 |
+| WBGT_c | -0.182 | 0.020 | 953 | -8.90 | <0.001 |
+| Time_of_dayEvening:WBGT_c | 0.007 | 0.029 | 830 | 0.24 | 0.812 |
+
+**Table S26: Random effects estimates for Model 1 - High intensity distance covered per minute (Zones 4 and 5)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 1.88 |
+| Residual | sd__Observation | 1.52 |
+
+**Table S27: Model fit statistics for Model 1 - High intensity distance covered per minute (Zones 4 and 5)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.668 |
+| Marginal R-squared | 0.166 |
+| AIC | 4609 |
+| BIC | 4669 |
+| Log-Likelihood (ML) | -2293 |
+| Residual DF | 1058 |
+| Number of Observations | 1070 |
+
+#### Moderate intensity distance covered per minute (Zone 3)
+**Table S28: Fixed effects estimates for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 10.941 | 0.345 | 506 | 31.74 | <0.001 |
+| StagePlayoffs | -0.525 | 0.192 | 881 | -2.73 | 0.007 |
+| Time_of_dayEvening | 0.569 | 0.161 | 822 | 3.54 | <0.001 |
+| Ranking_difference | 0.007 | 0.007 | 1037 | 1.00 | 0.318 |
+| Player_positionMF | 4.484 | 0.331 | 423 | 13.55 | <0.001 |
+| Player_positionFW | 2.150 | 0.372 | 433 | 5.77 | <0.001 |
+| Player_age_c | -0.063 | 0.032 | 446 | -1.96 | 0.050 |
+| Origin_climateTemperate | 0.753 | 0.325 | 435 | 2.32 | 0.021 |
+| WBGT_c | -0.336 | 0.026 | 899 | -12.94 | <0.001 |
+| Time_of_dayEvening:WBGT_c | 0.026 | 0.037 | 788 | 0.70 | 0.486 |
+
+**Table S29: Random effects estimates for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 2.69 |
+| Residual | sd__Observation | 1.89 |
+
+**Table S30: Model fit statistics for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.797 |
+| Marginal R-squared | 0.382 |
+| AIC | 5168 |
+| BIC | 5228 |
+| Log-Likelihood (ML) | -2572 |
+| Residual DF | 1058 |
+| Number of Observations | 1070 |
+
+#### Low intensity distance covered per minute (Zones 1 and 2)
+**Table S31: Fixed effects estimates for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 79.460 | 0.633 | 513 | 125.45 | <0.001 |
+| StagePlayoffs | -0.378 | 0.376 | 908 | -1.00 | 0.316 |
+| Time_of_dayEvening | 0.956 | 0.316 | 851 | 3.03 | 0.003 |
+| Ranking_difference | -0.009 | 0.013 | 1058 | -0.70 | 0.485 |
+| Player_positionMF | 4.603 | 0.603 | 420 | 7.63 | <0.001 |
+| Player_positionFW | 0.927 | 0.679 | 431 | 1.37 | 0.173 |
+| Player_age_c | -0.133 | 0.058 | 446 | -2.27 | 0.023 |
+| Origin_climateTemperate | 2.232 | 0.593 | 433 | 3.76 | <0.001 |
+| WBGT_c | -0.631 | 0.051 | 935 | -12.44 | <0.001 |
+| Time_of_dayEvening:WBGT_c | 0.398 | 0.072 | 810 | 5.52 | <0.001 |
+
+**Table S32: Random effects estimates for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 4.80 |
+| Residual | sd__Observation | 3.75 |
+
+**Table S33: Model fit statistics for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Metric | Value |
+| :--- | :---:|
+| Conditional R-squared | 0.712 |
+| Marginal R-squared | 0.241 |
+| AIC | 6563 |
+| BIC | 6623 |
+| Log-Likelihood (ML) | -3269 |
+| Residual DF | 1058 |
+| Number of Observations | 1070 |
+
+#### Total distance covered per minute
+**Table S34: Fixed effects estimates for Model 1 - Total distance covered per minute**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 96.937 | 0.898 | 511 | 107.98 | <0.001 |
+| StagePlayoffs | -0.805 | 0.496 | 880 | -1.62 | 0.105 |
+| Time_of_dayEvening | 1.963 | 0.415 | 823 | 4.73 | <0.001 |
+| Ranking_difference | 0.000 | 0.018 | 1034 | -0.02 | 0.980 |
+| Player_positionMF | 9.667 | 0.863 | 429 | 11.20 | <0.001 |
+| Player_positionFW | 4.586 | 0.970 | 439 | 4.73 | <0.001 |
+| Player_age_c | -0.279 | 0.083 | 452 | -3.35 | <0.001 |
+| Origin_climateTemperate | 3.008 | 0.847 | 441 | 3.55 | <0.001 |
+| WBGT_c | -1.153 | 0.067 | 897 | -17.20 | <0.001 |
+| Time_of_dayEvening:WBGT_c | 0.421 | 0.094 | 789 | 4.46 | <0.001 |
+
+**Table S35: Random effects estimates for Model 1 - Total distance covered per minute**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 7.04 |
+| Residual | sd__Observation | 4.85 |
+
+**Table S36: Model fit statistics for Model 1 - Total distance covered per minute**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.801 |
+| Marginal R-squared | 0.383 |
+| AIC | 7202 |
+| BIC | 7261 |
+| Log-Likelihood (ML) | -3589 |
+| Residual DF | 1058 |
+| Number of Observations | 1070 |
+
+### MODEL 2
+#### High intensity distance covered per minute (Zones 4 and 5)
+**Table S37: Fixed effects estimates for Model 2 - High intensity distance covered per minute (Zones 4 and 5)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 6.580 | 0.267 | 646 | 24.68 | <0.001 |
+| StagePlayoffs | 0.090 | 0.168 | 969 | 0.54 | 0.591 |
+| Time_of_dayEvening | 0.286 | 0.245 | 831 | 1.17 | 0.244 |
+| Ranking_difference | 0.005 | 0.005 | 1066 | 0.91 | 0.364 |
+| Player_positionMF | 0.597 | 0.238 | 433 | 2.51 | 0.012 |
+| Player_positionFW | 1.508 | 0.268 | 445 | 5.63 | <0.001 |
+| Player_age_c | -0.086 | 0.023 | 461 | -3.73 | <0.001 |
+| Origin_climateTemperate | -0.008 | 0.234 | 448 | -0.03 | 0.973 |
+| Temp_c | -0.182 | 0.021 | 1052 | -8.80 | <0.001 |
+| UR_c | -0.039 | 0.008 | 909 | -5.22 | <0.001 |
+| RAD_c | 0.000 | 0.000 | 833 | -0.68 | 0.499 |
+| Time_of_dayEvening:Temp_c | 0.019 | 0.027 | 834 | 0.68 | 0.495 |
+| Time_of_dayEvening:UR_c | 0.026 | 0.009 | 872 | 2.90 | 0.004 |
+
+**Table S38: Random effects estimates for Model 2 - High intensity distance covered per minute (Zones 4 and 5)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 1.88 |
+| Residual | sd__Observation | 1.52 |
+
+**Table S39: Model fit statistics for Model 2 - High intensity distance covered per minute (Zones 4 and 5)**
+| Metric | Value |
+| :--- | :---:|
+| Conditional R-squared | 0.673 |
+| Marginal R-squared | 0.175 |
+| AIC | 4610 |
+| BIC | 4685 |
+| Log-Likelihood (ML) | -2290 |
+| Residual DF | 1055 |
+| Number of Observations | 1070 |
+
+#### Moderate intensity distance covered per minute (Zone 3)
+**Table S40: Fixed effects estimates for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 10.750 | 0.364 | 602 | 29.51 | <0.001 |
+| StagePlayoffs | -0.521 | 0.214 | 930 | -2.43 | 0.015 |
+| Time_of_dayEvening | 1.026 | 0.309 | 787 | 3.32 | <0.001 |
+| Ranking_difference | 0.009 | 0.007 | 1042 | 1.33 | 0.183 |
+| Player_positionMF | 4.487 | 0.332 | 421 | 13.53 | <0.001 |
+| Player_positionFW | 2.153 | 0.373 | 431 | 5.77 | <0.001 |
+| Player_age_c | -0.064 | 0.032 | 445 | -2.00 | 0.046 |
+| Origin_climateTemperate | 0.754 | 0.326 | 435 | 2.31 | 0.021 |
+| Temp_c | -0.296 | 0.027 | 1022 | -11.10 | <0.001 |
+| UR_c | -0.016 | 0.010 | 864 | -1.71 | 0.087 |
+| RAD_c | 0.001 | 0.001 | 789 | 1.90 | 0.057 |
+| Time_of_dayEvening:Temp_c | 0.026 | 0.034 | 791 | 0.77 | 0.442 |
+| Time_of_dayEvening:UR_c | -0.003 | 0.011 | 825 | -0.25 | 0.802 |
+
+**Table S41: Random effects estimates for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 2.70 |
+| Residual | sd__Observation | 1.89 |
+
+**Table S42: Model fit statistics for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.797 |
+| Marginal R-squared | 0.380 |
+| AIC | 5176 |
+| BIC | 5251 |
+| Log-Likelihood (ML) | -2573 |
+| Residual DF | 1055 |
+| Number of Observations | 1070 |
+
+#### Low intensity distance covered per minute (Zones 1 and 2)
+**Table S43: Fixed effects estimates for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 78.997 | 0.662 | 631 | 119.34 | <0.001 |
+| StagePlayoffs | -0.660 | 0.411 | 960 | -1.60 | 0.109 |
+| Time_of_dayEvening | 2.115 | 0.599 | 817 | 3.53 | <0.001 |
+| Ranking_difference | -0.003 | 0.013 | 1063 | -0.23 | 0.819 |
+| Player_positionMF | 4.629 | 0.592 | 424 | 7.81 | <0.001 |
+| Player_positionFW | 0.934 | 0.667 | 435 | 1.40 | 0.162 |
+| Player_age_c | -0.138 | 0.057 | 451 | -2.41 | 0.016 |
+| Origin_climateTemperate | 2.358 | 0.583 | 439 | 4.04 | <0.001 |
+| Temp_c | -0.505 | 0.051 | 1047 | -9.96 | <0.001 |
+| UR_c | 0.029 | 0.018 | 897 | 1.59 | 0.112 |
+| RAD_c | 0.003 | 0.001 | 819 | 2.87 | 0.004 |
+| Time_of_dayEvening:Temp_c | 0.349 | 0.066 | 821 | 5.25 | <0.001 |
+| Time_of_dayEvening:UR_c | -0.014 | 0.022 | 859 | -0.63 | 0.527 |
+
+**Table S44: Random effects estimates for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 4.71 |
+| Residual | sd__Observation | 3.71 |
+
+**Table S45: Model fit statistics for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.711 |
+| Marginal R-squared | 0.247 |
+| AIC | 6538 |
+| BIC | 6613 |
+| Log-Likelihood (ML) | -3254 |
+| Residual DF | 1055 |
+| Number of Observations | 1070 |
+
+#### Total distance covered per minute
+**Table S46: Fixed effects estimates for Model 2 - Total distance covered per minute**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 96.327 | 0.942 | 608 | 102.30 | <0.001 |
+| StagePlayoffs | -1.038 | 0.550 | 930 | -1.89 | 0.059 |
+| Time_of_dayEvening | 3.424 | 0.793 | 791 | 4.32 | <0.001 |
+| Ranking_difference | 0.010 | 0.018 | 1041 | 0.55 | 0.581 |
+| Player_positionMF | 9.693 | 0.859 | 430 | 11.29 | <0.001 |
+| Player_positionFW | 4.600 | 0.966 | 440 | 4.76 | <0.001 |
+| Player_age_c | -0.285 | 0.083 | 453 | -3.44 | <0.001 |
+| Origin_climateTemperate | 3.080 | 0.844 | 444 | 3.65 | <0.001 |
+| Temp_c | -0.984 | 0.068 | 1020 | -14.38 | <0.001 |
+| UR_c | -0.029 | 0.025 | 866 | -1.19 | 0.235 |
+| RAD_c | 0.004 | 0.001 | 793 | 2.59 | 0.010 |
+| Time_of_dayEvening:Temp_c | 0.386 | 0.088 | 795 | 4.39 | <0.001 |
+| Time_of_dayEvening:UR_c | 0.011 | 0.029 | 827 | 0.37 | 0.714 |
+
+**Table S47: Random effects estimates for Model 2 - Total distance covered per minute**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 7.01 |
+| Residual | sd__Observation | 4.84 |
+
+**Table S48: Model fit statistics for Model 2 - Total distance covered per minute**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.800 |
+| Marginal R-squared | 0.380 |
+| AIC | 7199 |
+| BIC | 7274 |
+| Log-Likelihood (ML) | -3585 |
+| Residual DF | 1055 |
+| Number of Observations | 1070 |
+
+### MODEL 5
+#### High intensity distance covered per minute (Zones 4 and 5)
+**Table S49: Fixed effects estimates for Model 5 - High intensity distance covered per minute (Zones 4 and 5)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---:|
+| (Intercept) | 6.514 | 0.250 | 535 | 26.11 | <0.001 |
+| StagePlayoffs | 0.167 | 0.160 | 971 | 1.04 | 0.297 |
+| Time_of_dayEvening | 0.431 | 0.134 | 845 | 3.21 | 0.001 |
+| Ranking_difference | 0.003 | 0.005 | 1065 | 0.65 | 0.515 |
+| Player_positionMF | 0.595 | 0.237 | 434 | 2.52 | 0.012 |
+| Player_positionFW | 1.508 | 0.266 | 446 | 5.66 | <0.001 |
+| Player_age_c | -0.086 | 0.023 | 462 | -3.74 | <0.001 |
+| Origin_climateTemperate | 0.007 | 0.233 | 448 | 0.03 | 0.976 |
+| WBGT_c | -0.209 | 0.022 | 1052 | -9.31 | <0.001 |
+| UR_c | -0.017 | 0.005 | 892 | -3.26 | 0.001 |
+| Time_of_dayEvening:UR_c | 0.018 | 0.008 | 834 | 2.20 | 0.028 |
+| Time_of_dayEvening:WBGT_c | 0.024 | 0.030 | 832 | 0.79 | 0.431 |
+
+**Table S50: Random effects estimates for Model 5 - High intensity distance covered per minute (Zones 4 and 5)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---:|
+| Player_id | sd__(Intercept) | 1.86 |
+| Residual | sd__Observation | 1.52 |
+
+**Table S51: Model fit statistics for Model 5 - High intensity distance covered per minute (Zones 4 and 5)**
+| Metric | Value |
+| :--- | :---:|
+| Conditional R-squared | 0.673 |
+| Marginal R-squared | 0.180 |
+| AIC | 4603 |
+| BIC | 4672 |
+| Log-Likelihood (ML) | -2287 |
+| Residual DF | 1056 |
+| Number of Observations | 1070 |
+
+#### Moderate intensity distance covered per minute (Zone 3)
+**Table S52: Fixed effects estimates for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 10.956 | 0.345 | 508 | 31.72 | <0.001 |
+| StagePlayoffs | -0.580 | 0.205 | 930 | -2.83 | 0.005 |
+| Time_of_dayEvening | 0.547 | 0.170 | 797 | 3.22 | 0.001 |
+| Ranking_difference | 0.007 | 0.007 | 1041 | 1.03 | 0.302 |
+| Player_positionMF | 4.486 | 0.331 | 422 | 13.54 | <0.001 |
+| Player_positionFW | 2.149 | 0.373 | 432 | 5.77 | <0.001 |
+| Player_age_c | -0.063 | 0.032 | 446 | -1.97 | 0.049 |
+| Origin_climateTemperate | 0.765 | 0.325 | 435 | 2.35 | 0.019 |
+| WBGT_c | -0.326 | 0.029 | 1020 | -11.24 | <0.001 |
+| UR_c | 0.006 | 0.007 | 848 | 0.86 | 0.392 |
+| Time_of_dayEvening:UR_c | -0.004 | 0.010 | 788 | -0.44 | 0.658 |
+| Time_of_dayEvening:WBGT_c | 0.019 | 0.038 | 788 | 0.50 | 0.620 |
+
+**Table S53: Random effects estimates for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 2.70 |
+| Residual | sd__Observation | 1.89 |
+
+**Table S54: Model fit statistics for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.797 |
+| Marginal R-squared | 0.380 |
+| AIC | 5171 |
+| BIC | 5241 |
+| Log-Likelihood (ML) | -2572 |
+| Residual DF | 1056 |
+| Number of Observations | 1070 |
+
+#### Low intensity distance covered per minute (Zones 1 and 2)
+**Table S55: Fixed effects estimates for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 79.616 | 0.627 | 521 | 126.92 | <0.001 |
+| StagePlayoffs | -0.961 | 0.396 | 960 | -2.43 | 0.015 |
+| Time_of_dayEvening | 0.644 | 0.331 | 829 | 1.95 | 0.052 |
+| Ranking_difference | -0.006 | 0.013 | 1061 | -0.50 | 0.620 |
+| Player_positionMF | 4.633 | 0.596 | 424 | 7.77 | <0.001 |
+| Player_positionFW | 0.916 | 0.671 | 435 | 1.36 | 0.173 |
+| Player_age_c | -0.136 | 0.058 | 450 | -2.36 | 0.019 |
+| Origin_climateTemperate | 2.359 | 0.587 | 438 | 4.02 | <0.001 |
+| WBGT_c | -0.526 | 0.056 | 1045 | -9.46 | <0.001 |
+| UR_c | 0.058 | 0.013 | 878 | 4.39 | <0.001 |
+| Time_of_dayEvening:UR_c | -0.033 | 0.020 | 818 | -1.68 | 0.093 |
+| Time_of_dayEvening:WBGT_c | 0.322 | 0.074 | 816 | 4.34 | <0.001 |
+
+**Table S56: Random effects estimates for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 4.74 |
+| Residual | sd__Observation | 3.72 |
+
+**Table S57: Model fit statistics for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
+| Metric | Value |
+| :--- | :---: |
+| Conditional R-squared | 0.710 |
+| Marginal R-squared | 0.240 |
+| AIC | 6547 |
+| BIC | 6617 |
+| Log-Likelihood (ML) | -3259 |
+| Residual DF | 1056 |
+| Number of Observations | 1070 |
+
+#### Total distance covered per minute
+**Table S58: Fixed effects estimates for Model 5 - Total distance covered per minute**
+| Predictor Variable | Estimate | Std. Error | Degrees of Freedom | t-value | P-value |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| (Intercept) | 97.049 | 0.896 | 515 | 108.27 | <0.001 |
+| StagePlayoffs | -1.293 | 0.527 | 930 | -2.45 | 0.014 |
+| Time_of_dayEvening | 1.694 | 0.436 | 800 | 3.89 | <0.001 |
+| Ranking_difference | 0.002 | 0.018 | 1038 | 0.12 | 0.904 |
+| Player_positionMF | 9.696 | 0.861 | 430 | 11.27 | <0.001 |
+| Player_positionFW | 4.576 | 0.968 | 440 | 4.73 | <0.001 |
+| Player_age_c | -0.281 | 0.083 | 453 | -3.38 | <0.001 |
+| Origin_climateTemperate | 3.115 | 0.845 | 443 | 3.68 | <0.001 |
+| WBGT_c | -1.063 | 0.075 | 1018 | -14.24 | <0.001 |
+| UR_c | 0.045 | 0.017 | 849 | 2.59 | 0.010 |
+| Time_of_dayEvening:UR_c | -0.019 | 0.026 | 791 | -0.74 | 0.462 |
+| Time_of_dayEvening:WBGT_c | 0.357 | 0.098 | 791 | 3.66 | <0.001 |
+
+**Table S59: Random effects estimates for Model 5 - Total distance covered per minute**
+| Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
+| :--- | :---: | :---: |
+| Player_id | sd__(Intercept) | 7.03 |
+| Residual | sd__Observation | 4.83 |
+
+**Table S60: Model fit statistics for Model 5 - Total distance covered per minute**
+| Metric | Value |
+| :--- | :---:|
+| Conditional R-squared | 0.800 |
+| Marginal R-squared | 0.378 |
+| AIC | 7198 |
+| BIC | 7268 |
+| Log-Likelihood (ML) | -3585 |
+| Residual DF | 1056 |
+| Number of Observations | 1070 |
+
 ## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
