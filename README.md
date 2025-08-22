@@ -961,6 +961,207 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Residual DF | 1056 |
 | Number of Observations | 1070 |
 
+
+## Assumptions checks of discarded models (Model 3 and 4)
+
+### MODEL 3
+#### High intensity distance covered per minute (Zones 4 and 5)
+**Table S61: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.53 | [1.42, 1.67] | 1.24 | 0.65 | [0.60, 0.70] |
+| Time_of_day | 3.63 | [3.28, 4.03] | 1.90 | 0.28 | [0.25, 0.30] |
+| Ranking_difference | 1.15 | [1.09, 1.25] | 1.07 | 0.87 | [0.80, 0.92] |
+| Player_position | 1.02 | [1.00, 1.45] | 1.01 | 0.98 | [0.69, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.18] | 1.02 | 0.95 | [0.84, 0.99] |
+| RAD_c | 3.85 | [3.48, 4.27] | 1.96 | 0.26 | [0.23, 0.29] |
+| Temp_c | 47.75 | [42.48, 53.68] | 6.91 | 0.02 | [0.02, 0.02] |
+| UA_c | 48.25 | [42.93, 54.26] | 6.95 | 0.02 | [0.02, 0.02] |
+
+**Supplementary Table 61:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+
+#### Moderate intensity distance covered per minute (Zones 3) 
+**Table S62: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.57 | [1.46, 1.71] | 1.25 | 0.64 | [0.58, 0.69] |
+| Time_of_day | 3.63 | [3.29, 4.03] | 1.91 | 0.28 | [0.25, 0.30] |
+| Ranking_difference | 1.18 | [1.11, 1.28] | 1.09 | 0.85 | [0.78, 0.90] |
+| Player_position | 1.02 | [1.00, 1.50] | 1.01 | 0.98 | [0.67, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.20] | 1.02 | 0.96 | [0.83, 0.99] |
+| Origin_climate | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| RAD_c | 3.90 | [3.52, 4.33] | 1.97 | 0.26 | [0.23, 0.28] |
+| Temp_c | 47.29 | [42.07, 53.17] | 6.88 | 0.02 | [0.02, 0.02] |
+| UA_c | 47.71 | [42.45, 53.65] | 6.91 | 0.02 | [0.02, 0.02] |
+
+**Supplementary Table 62:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+#### Low intensity distance covered per minute (Zones 1 and 2)
+**Table S63: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.54 | [1.43, 1.68] | 1.24 | 0.65 | [0.60, 0.70] |
+| Time_of_day | 3.63 | [3.28, 4.03] | 1.91 | 0.28 | [0.25, 0.30] |
+| Ranking_difference | 1.16 | [1.10, 1.26] | 1.08 | 0.86 | [0.80, 0.91] |
+| Player_position | 1.02 | [1.00, 1.46] | 1.01 | 0.98 | [0.69, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.19] | 1.02 | 0.95 | [0.84, 0.99] |
+| RAD_c | 3.86 | [3.49, 4.28] | 1.96 | 0.26 | [0.23, 0.29] |
+| Temp_c | 47.65 | [42.39, 53.57] | 6.90 | 0.02 | [0.02, 0.02] |
+| UA_c | 48.14 | [42.82, 54.13] | 6.94 | 0.02 | [0.02, 0.02] |
+
+**Supplementary Table 63:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+#### Total distance covered per minute
+**Table S64: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.57 | [1.45, 1.71] | 1.25 | 0.64 | [0.58, 0.69] |
+| Time_of_day | 3.63 | [3.29, 4.03] | 1.91 | 0.28 | [0.25, 0.30] |
+| Ranking_difference | 1.18 | [1.11, 1.28] | 1.08 | 0.85 | [0.78, 0.90] |
+| Player_position | 1.02 | [1.00, 1.50] | 1.01 | 0.98 | [0.67, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.20] | 1.02 | 0.96 | [0.83, 0.99] |
+| Origin_climate | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| RAD_c | 3.90 | [3.52, 4.33] | 1.97 | 0.26 | [0.23, 0.28] |
+| Temp_c | 47.30 | [42.08, 53.18] | 6.88 | 0.02 | [0.02, 0.02] |
+| UA_c | 47.72 | [42.46, 53.66] | 6.91 | 0.02 | [0.02, 0.02] |
+
+**Supplementary Table 64:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+### MODEL 4
+#### High intensity distance covered per minute (Zones 4 and 5) 
+**Table S65: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.38 | [1.29, 1.50] | 1.17 | 0.73 | [0.67, 0.78] |
+| Time_of_day | 1.27 | [1.20, 1.38] | 1.13 | 0.79 | [0.72, 0.84] |
+| Ranking_difference | 1.16 | [1.10, 1.26] | 1.08 | 0.86 | [0.79, 0.91] |
+| Player_position | 1.02 | [1.00, 1.42] | 1.01 | 0.98 | [0.70, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.18] | 1.03 | 0.95 | [0.85, 0.99] |
+| Temp_c | 37.75 | [33.60, 42.43] | 6.14 | 0.03 | [0.02, 0.03] |
+| TN_c | 16.95 | [15.12, 19.02] | 4.12 | 0.06 | [0.05, 0.07] |
+| TG_c | 78.89 | [70.14, 88.74] | 8.88 | 0.01 | [0.01, 0.01] |
+
+**Supplementary Table 65:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+#### Moderate intensity distance covered per minute (Zones 3) 
+**Table S66: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.43 | [1.33, 1.55] | 1.19 | 0.70 | [0.64, 0.75] |
+| Time_of_day | 1.27 | [1.19, 1.38] | 1.13 | 0.79 | [0.72, 0.84] |
+| Ranking_difference | 1.19 | [1.12, 1.29] | 1.09 | 0.84 | [0.77, 0.89] |
+| Player_position | 1.02 | [1.00, 1.47] | 1.01 | 0.98 | [0.68, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.20] | 1.02 | 0.96 | [0.83, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Temp_c | 37.53 | [33.40, 42.19] | 6.13 | 0.03 | [0.02, 0.03] |
+| TN_c | 16.47 | [14.69, 18.48] | 4.06 | 0.06 | [0.05, 0.07] |
+| TG_c | 77.08 | [68.54, 86.70] | 8.78 | 0.01 | [0.01, 0.01] |
+
+**Supplementary Table 66:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+#### Low intensity distance covered per minute (Zones 1 and 2)
+**Table S67: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.39 | [1.30, 1.51] | 1.18 | 0.72 | [0.66, 0.77] |
+| Time_of_day | 1.27 | [1.20, 1.38] | 1.13 | 0.79 | [0.72, 0.84] |
+| Ranking_difference | 1.17 | [1.10, 1.27] | 1.08 | 0.86 | [0.79, 0.91] |
+| Player_position | 1.02 | [1.00, 1.43] | 1.01 | 0.98 | [0.70, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.18] | 1.02 | 0.95 | [0.84, 0.99] |
+| Temp_c | 37.70 | [33.55, 42.38] | 6.14 | 0.03 | [0.02, 0.03] |
+| TN_c | 16.84 | [15.02, 18.90] | 4.10 | 0.06 | [0.05, 0.07] |
+| TG_c | 78.50 | [69.80, 88.31] | 8.86 | 0.01 | [0.01, 0.01] |
+
+**Supplementary Table 67:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+#### Total distance covered per minute
+**Table S68: Multicollinearity diagnosis**
+| Predictor | VIF | VIF 95% CI | Increased SE | Tolerance | Tolerance 95% CI |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Stage | 1.43 | [1.33, 1.56] | 1.20 | 0.70 | [0.64, 0.75] |
+| Time_of_day | 1.27 | [1.19, 1.38] | 1.13 | 0.79 | [0.72, 0.84] |
+| Ranking_difference | 1.19 | [1.13, 1.30] | 1.09 | 0.84 | [0.77, 0.89] |
+| Player_position | 1.02 | [1.00, 1.47] | 1.01 | 0.98 | [0.68, 1.00] |
+| Player_age_c | 1.04 | [1.01, 1.20] | 1.02 | 0.96 | [0.83, 0.99] |
+| Origin_climate | 1.05 | [1.01, 1.19] | 1.02 | 0.96 | [0.84, 0.99] |
+| Temp_c | 37.51 | [33.39, 42.17] | 6.12 | 0.03 | [0.02, 0.03] |
+| TN_c | 16.43 | [14.65, 18.43] | 4.05 | 0.06 | [0.05, 0.07] |
+| TG_c | 76.93 | [68.41, 86.54] | 8.77 | 0.01 | [0.01, 0.01] |
+
+**Supplementary Table 68:** Results of the multicollinearity diagnosis for model 5 and and the outcome variable Low intensity distance covered per minute. Variance Inflation Factor (VIF), Increased Standard Error, and Tolerance values for each predictor in the model. These metrics assess the degree of multicollinearity among the continuous predictor variables. VIF > 10 indicates high multicollinearity and VIF > 5 indicates moderate multicollinearity.
+
+## Assumptions check of Sprint Distance Running (Zone 5) - highly violated
+
+### Model 1
+**Fig S29: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
+<img src="images/FigS29-Sprint-model1-residuals-check.png" width="800" alt="Fig S29">
+
+**Supplementary Figure 29:** Graphical analysis of the model residuals for assumptions assessment. The histogram and Q-Q plot were used to visually assess the normality of the residuals. The scatterplot of residuals versus fitted values was used to assess the assumption of homoscedasticity.
+
+**Fig S30: Histogram and Q-Q Plot of random effects**
+
+"<img src="images/FigS30-Sprint-model1-random-effects-check.png" width="800" alt="Fig S30">"
+
+**Supplementary Figure 30**: Graphical assessment of the normality of the random effects. The histograms and Q-Q plots for each random effect are used to visually confirm the assumption that they are normally distributed.
+
+**Table S69: Kolmogorov-Smirnov test for residuals and random effects normality check**
+|Data| D | p-value|
+|:--:|:--:|:-----:|
+|Residuals | 0.06 |0.000000006 |
+|Random effects| 0.09 | 0.000000007 |
+
+**Supplementary Table 69:** Kolmogorov-Smirnov test results to check the assumption of normality for both the model residuals and the random effects. The table shows the D statistic and the p-value for each test.
+
+### Model 2
+**Fig S31: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
+<img src="images/FigS31-Sprint-model2-residuals-check.png" width="800" alt="Fig S31">
+
+**Supplementary Figure 31:** Graphical analysis of the model residuals for assumptions assessment. The histogram and Q-Q plot were used to visually assess the normality of the residuals. The scatterplot of residuals versus fitted values was used to assess the assumption of homoscedasticity.
+
+**Fig S32: Histogram and Q-Q Plot of random effects**
+
+"<img src="images/FigS32-Sprint-model2-random-effects-check.png" width="800" alt="Fig S32">"
+
+**Supplementary Figure 32**: Graphical assessment of the normality of the random effects. The histograms and Q-Q plots for each random effect are used to visually confirm the assumption that they are normally distributed.
+
+**Table S70: Kolmogorov-Smirnov test for residuals and random effects normality check**
+|Data| D | p-value|
+|:--:|:--:|:-----:|
+|Residuals|0.06 | 0.00000000005|
+|Random effects|0.08 |0.0000007 |
+
+**Supplementary Table 70:** Kolmogorov-Smirnov test results to check the assumption of normality for both the model residuals and the random effects. The table shows the D statistic and the p-value for each test.
+
+### Model 5
+**Fig S33: Histogram and Q-Q Plot of residuals; scatterplot residuals x fitted. Graphical analysis of normality and homoscedasticity of residuals**
+
+<img src="images/FigS33-Sprint-model5-residuals-check.png" width="800" alt="Fig S33">
+
+**Supplementary Figure 33:** Graphical analysis of the model residuals for assumptions assessment. The histogram and Q-Q plot were used to visually assess the normality of the residuals. The scatterplot of residuals versus fitted values was used to assess the assumption of homoscedasticity.
+
+**Fig S33: Histogram and Q-Q Plot of random effects**
+
+"<img src="images/FigS34-Sprint-model5-random-effects-check.png" width="800" alt="Fig S34">"
+
+**Supplementary Figure 34**: Graphical assessment of the normality of the random effects. The histograms and Q-Q plots for each random effect are used to visually confirm the assumption that they are normally distributed.
+
+**Table S71: Kolmogorov-Smirnov test for residuals and random effects normality check**
+|Data| D | p-value|
+|:--:|:--:|:-----:|
+|Residuals|0.06 |0.00000000002 |
+|Random effects|0.09 |0.000000002 |
+
+**Supplementary Table 71:** Kolmogorov-Smirnov test results to check the assumption of normality for both the model residuals and the random effects. The table shows the D statistic and the p-value for each test.
+
+
+
 ## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
