@@ -569,12 +569,16 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Origin_climateTemperate | 0.041 | 0.234 | 447 | 0.18 | 0.860 |
 | WBGT_c | -0.182 | 0.020 | 953 | -8.90 | <0.001 |
 | Time_of_dayEvening:WBGT_c | 0.007 | 0.029 | 830 | 0.24 | 0.812 |
+**Supplementary Table 25:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
+
 
 **Table S26: Random effects estimates for Model 1 - High intensity distance covered per minute (Zones 4 and 5)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 1.88 |
 | Residual | sd__Observation | 1.52 |
+
+**Supplementary Table 26:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S27: Model fit statistics for Model 1 - High intensity distance covered per minute (Zones 4 and 5)**
 | Metric | Value |
@@ -586,6 +590,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2293 |
 | Residual DF | 1058 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 27:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Moderate intensity distance covered per minute (Zone 3)
 **Table S28: Fixed effects estimates for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
@@ -601,12 +607,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Origin_climateTemperate | 0.753 | 0.325 | 435 | 2.32 | 0.021 |
 | WBGT_c | -0.336 | 0.026 | 899 | -12.94 | <0.001 |
 | Time_of_dayEvening:WBGT_c | 0.026 | 0.037 | 788 | 0.70 | 0.486 |
+**Supplementary Table 28:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S29: Random effects estimates for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 2.69 |
 | Residual | sd__Observation | 1.89 |
+
+**Supplementary Table 29:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S30: Model fit statistics for Model 1 - Moderate intensity distance covered per minute (Zone 3)**
 | Metric | Value |
@@ -618,6 +627,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2572 |
 | Residual DF | 1058 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 30:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Low intensity distance covered per minute (Zones 1 and 2)
 **Table S31: Fixed effects estimates for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
@@ -633,12 +644,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Origin_climateTemperate | 2.232 | 0.593 | 433 | 3.76 | <0.001 |
 | WBGT_c | -0.631 | 0.051 | 935 | -12.44 | <0.001 |
 | Time_of_dayEvening:WBGT_c | 0.398 | 0.072 | 810 | 5.52 | <0.001 |
+**Supplementary Table 31:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S32: Random effects estimates for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 4.80 |
 | Residual | sd__Observation | 3.75 |
+
+**Supplementary Table 32:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S33: Model fit statistics for Model 1 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Metric | Value |
@@ -650,6 +664,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3269 |
 | Residual DF | 1058 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 33:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Total distance covered per minute
 **Table S34: Fixed effects estimates for Model 1 - Total distance covered per minute**
@@ -665,12 +681,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Origin_climateTemperate | 3.008 | 0.847 | 441 | 3.55 | <0.001 |
 | WBGT_c | -1.153 | 0.067 | 897 | -17.20 | <0.001 |
 | Time_of_dayEvening:WBGT_c | 0.421 | 0.094 | 789 | 4.46 | <0.001 |
+**Supplementary Table 34:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S35: Random effects estimates for Model 1 - Total distance covered per minute**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 7.04 |
 | Residual | sd__Observation | 4.85 |
+
+**Supplementary Table 35:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S36: Model fit statistics for Model 1 - Total distance covered per minute**
 | Metric | Value |
@@ -682,6 +701,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3589 |
 | Residual DF | 1058 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 36:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 ### MODEL 2
 #### High intensity distance covered per minute (Zones 4 and 5)
@@ -701,12 +722,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 0.000 | 0.000 | 833 | -0.68 | 0.499 |
 | Time_of_dayEvening:Temp_c | 0.019 | 0.027 | 834 | 0.68 | 0.495 |
 | Time_of_dayEvening:UR_c | 0.026 | 0.009 | 872 | 2.90 | 0.004 |
+**Supplementary Table 37:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S38: Random effects estimates for Model 2 - High intensity distance covered per minute (Zones 4 and 5)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 1.88 |
 | Residual | sd__Observation | 1.52 |
+
+**Supplementary Table 38:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S39: Model fit statistics for Model 2 - High intensity distance covered per minute (Zones 4 and 5)**
 | Metric | Value |
@@ -718,6 +742,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2290 |
 | Residual DF | 1055 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 39:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Moderate intensity distance covered per minute (Zone 3)
 **Table S40: Fixed effects estimates for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
@@ -736,12 +762,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 0.001 | 0.001 | 789 | 1.90 | 0.057 |
 | Time_of_dayEvening:Temp_c | 0.026 | 0.034 | 791 | 0.77 | 0.442 |
 | Time_of_dayEvening:UR_c | -0.003 | 0.011 | 825 | -0.25 | 0.802 |
+**Supplementary Table 40:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S41: Random effects estimates for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 2.70 |
 | Residual | sd__Observation | 1.89 |
+
+**Supplementary Table 41:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S42: Model fit statistics for Model 2 - Moderate intensity distance covered per minute (Zone 3)**
 | Metric | Value |
@@ -753,6 +782,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2573 |
 | Residual DF | 1055 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 42:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Low intensity distance covered per minute (Zones 1 and 2)
 **Table S43: Fixed effects estimates for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
@@ -771,12 +802,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 0.003 | 0.001 | 819 | 2.87 | 0.004 |
 | Time_of_dayEvening:Temp_c | 0.349 | 0.066 | 821 | 5.25 | <0.001 |
 | Time_of_dayEvening:UR_c | -0.014 | 0.022 | 859 | -0.63 | 0.527 |
+**Supplementary Table 43:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S44: Random effects estimates for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 4.71 |
 | Residual | sd__Observation | 3.71 |
+
+**Supplementary Table 44:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S45: Model fit statistics for Model 2 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Metric | Value |
@@ -788,6 +822,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3254 |
 | Residual DF | 1055 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 45:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Total distance covered per minute
 **Table S46: Fixed effects estimates for Model 2 - Total distance covered per minute**
@@ -806,12 +842,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | RAD_c | 0.004 | 0.001 | 793 | 2.59 | 0.010 |
 | Time_of_dayEvening:Temp_c | 0.386 | 0.088 | 795 | 4.39 | <0.001 |
 | Time_of_dayEvening:UR_c | 0.011 | 0.029 | 827 | 0.37 | 0.714 |
+**Supplementary Table 46:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S47: Random effects estimates for Model 2 - Total distance covered per minute**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 7.01 |
 | Residual | sd__Observation | 4.84 |
+
+**Supplementary Table 47:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S48: Model fit statistics for Model 2 - Total distance covered per minute**
 | Metric | Value |
@@ -823,6 +862,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3585 |
 | Residual DF | 1055 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 48:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 ### MODEL 5
 #### High intensity distance covered per minute (Zones 4 and 5)
@@ -842,11 +883,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_dayEvening:UR_c | 0.018 | 0.008 | 834 | 2.20 | 0.028 |
 | Time_of_dayEvening:WBGT_c | 0.024 | 0.030 | 832 | 0.79 | 0.431 |
 
+**Supplementary Table 49:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
+
 **Table S50: Random effects estimates for Model 5 - High intensity distance covered per minute (Zones 4 and 5)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---:|
 | Player_id | sd__(Intercept) | 1.86 |
 | Residual | sd__Observation | 1.52 |
+
+**Supplementary Table 50:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S51: Model fit statistics for Model 5 - High intensity distance covered per minute (Zones 4 and 5)**
 | Metric | Value |
@@ -858,6 +903,7 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2287 |
 | Residual DF | 1056 |
 | Number of Observations | 1070 |
+**Supplementary Table 51:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Moderate intensity distance covered per minute (Zone 3)
 **Table S52: Fixed effects estimates for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
@@ -876,11 +922,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Time_of_dayEvening:UR_c | -0.004 | 0.010 | 788 | -0.44 | 0.658 |
 | Time_of_dayEvening:WBGT_c | 0.019 | 0.038 | 788 | 0.50 | 0.620 |
 
+**Supplementary Table 52:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
+
 **Table S53: Random effects estimates for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 2.70 |
 | Residual | sd__Observation | 1.89 |
+
+**Supplementary Table 53:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S54: Model fit statistics for Model 5 - Moderate intensity distance covered per minute (Zone 3)**
 | Metric | Value |
@@ -892,6 +942,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -2572 |
 | Residual DF | 1056 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 54:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Low intensity distance covered per minute (Zones 1 and 2)
 **Table S55: Fixed effects estimates for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
@@ -909,12 +961,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | UR_c | 0.058 | 0.013 | 878 | 4.39 | <0.001 |
 | Time_of_dayEvening:UR_c | -0.033 | 0.020 | 818 | -1.68 | 0.093 |
 | Time_of_dayEvening:WBGT_c | 0.322 | 0.074 | 816 | 4.34 | <0.001 |
+**Supplementary Table 55:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S56: Random effects estimates for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 4.74 |
 | Residual | sd__Observation | 3.72 |
+
+**Supplementary Table 56:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S57: Model fit statistics for Model 5 - Low intensity distance covered per minute (Zones 1 and 2)**
 | Metric | Value |
@@ -926,6 +981,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3259 |
 | Residual DF | 1056 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 57:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 #### Total distance covered per minute
 **Table S58: Fixed effects estimates for Model 5 - Total distance covered per minute**
@@ -943,12 +1000,15 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | UR_c | 0.045 | 0.017 | 849 | 2.59 | 0.010 |
 | Time_of_dayEvening:UR_c | -0.019 | 0.026 | 791 | -0.74 | 0.462 |
 | Time_of_dayEvening:WBGT_c | 0.357 | 0.098 | 791 | 3.66 | <0.001 |
+**Supplementary Table 58:** Fixed effects estimates, standard error, degrees of freedom, t-value, and P-value for each predictor.
 
 **Table S59: Random effects estimates for Model 5 - Total distance covered per minute**
 | Random Effect Group | Parameter Type | Estimate (Std.Dev. or Residual Std.Dev.) |
 | :--- | :---: | :---: |
 | Player_id | sd__(Intercept) | 7.03 |
 | Residual | sd__Observation | 4.83 |
+
+**Supplementary Table 59:** Estimated standard deviations for the random effects (grouping factor: Player_id) and the residual standard deviation.
 
 **Table S60: Model fit statistics for Model 5 - Total distance covered per minute**
 | Metric | Value |
@@ -960,6 +1020,8 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 | Log-Likelihood (ML) | -3585 |
 | Residual DF | 1056 |
 | Number of Observations | 1070 |
+
+**Supplementary Table 60:** Key metrics used to assess and compare models fit. AIC: Akaike Information Criterion; BIC: Bayesian Information Criterion.
 
 
 ## Assumptions checks of discarded models (Model 3 and 4)
@@ -1146,7 +1208,7 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 
 **Supplementary Figure 33:** Graphical analysis of the model residuals for assumptions assessment. The histogram and Q-Q plot were used to visually assess the normality of the residuals. The scatterplot of residuals versus fitted values was used to assess the assumption of homoscedasticity.
 
-**Fig S33: Histogram and Q-Q Plot of random effects**
+**Fig S34: Histogram and Q-Q Plot of random effects**
 
 "<img src="images/FigS34-Sprint-model5-random-effects-check.png" width="800" alt="Fig S34">"
 
