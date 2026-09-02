@@ -1222,6 +1222,7 @@ VD ~ Stage + Time_of_day + Ranking_difference + Player_position + Player_age_c +
 
 **Supplementary Table 71:** Kolmogorov-Smirnov test results to check the assumption of normality for both the model residuals and the random effects. The table shows the D statistic and the p-value for each test.
 
+## Se você quer aprender mais sobre esse tipo de modelagem faça a disciplina completa da USP para modelagem regressiva pelo link: https://drive.google.com/drive/folders/1WnalMlcCUoV-qoEdCt1RqViQv9oea3Q9?usp=sharing 
 
 
 ## Licença
